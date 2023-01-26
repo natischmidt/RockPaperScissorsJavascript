@@ -9,17 +9,14 @@
 </head>
 
 <body>
-<div>RPS</div>
-hellooooo
-
 <nav>
     <ul>
-        <li><a href="">Home</a></li>
-        <li><a href="">Start</a></li>
-        <li><a href="">null</a></li>
-        <li><a href="">null</a></li>
-        <li><a href="index.html">
-            <button class="login">Tillbaka</button>
+        <li><a href=""><button class="home">Home</button></a></li>
+        <li><a href=""><button class="about">About</button></a></li>
+        <li><a href=""><button class="friendlist">Friends</button></a></li>
+        <li><a href=""><button class="donation">Donate</button></a></li>
+        <li class="logout"><a href="index.html">
+            <button class="login">Logout</button>
         </a></li>
     </ul>
 </nav>
@@ -28,17 +25,16 @@ hellooooo
     <h1 class="rock">Rock</h1>
     <h1 class="paper">Paper</h1>
     <h1 class="scissor">Scissor</h1>
-
     <button class="play">Play</button>
-
-
-
-
-
-
+    <br>
+    <div class="popup" onclick="myFunction()">
+        <button class="rules">Rules</button>
+        <span class="popuptext" id="myPopup">
+                    The rules of Rock Paper Scissor are simple. Rock beats Scissor, Paper beats Rock and Scissor beats Paper.
+                    The game is finished when one player gets three wins. Equal move results in a draw and neither player gets a point.
+                </span>
+    </div>
 </div>
-
-
 
 <footer class="footer">
     <div class="more">
@@ -53,6 +49,13 @@ hellooooo
         <p class="ig"><a href="#">Instagram</a></p>
     </div>
 </footer>
-
 </body>
+
+<script>
+    function myFunction() {
+        var popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
+</script>
+
 </html>
