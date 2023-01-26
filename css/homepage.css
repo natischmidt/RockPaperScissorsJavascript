@@ -1,0 +1,11 @@
+.right ul,
+li,
+a {
+    display: flex;
+
+}
+
+a:hover {
+    transform: scale(1.2);
+    transition: 0.25s;
+}
