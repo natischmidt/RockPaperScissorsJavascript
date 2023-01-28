@@ -44,8 +44,8 @@ a {
 
 button {
     border-radius: 20px;
-    border: 1px solid #FF4B2B;
-    background-color: #a5062b;
+    border: 1px solid lightcyan;
+    background-color: #63b4ef;
     color: #FFFFFF;
     font-size: 12px;
     font-weight: bold;
@@ -139,7 +139,7 @@ input {
 }
 
 .overlay {
-    background: #a5062b;
+    background: #63b4ef;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 0 0;
