@@ -9,30 +9,43 @@
 </head>
 
 <body>
-<nav>
-    <ul>
-        <li><a href=""><button class="home">Home</button></a></li>
-        <li><a href=""><button class="about">About</button></a></li>
-        <li><a href=""><button class="friendlist">Friends</button></a></li>
-        <li><a href=""><button class="donation">Donate</button></a></li>
-        <li class="logout"><a href="index.html">
-            <button class="login">Logout</button>
-        </a></li>
-    </ul>
-</nav>
+<header>
+    <nav>
+        <ul class="nav-list">
+            <li><a href="">
+                <button class="home">Home</button>
+            </a></li>
+            <li><a href="">
+                <button class="about">About</button>
+            </a></li>
+            <li><a href="">
+                <button class="friendlist">Friends</button>
+            </a></li>
+            <li><a href="">
+                <button class="donation">Donate</button>
+            </a></li>
+            <li class="logout"><a href="index.html">
+                <button class="login">Logout</button>
+            </a></li>
+        </ul>
+    </nav>
+</header>
 
 <div class="container">
     <h1 class="rock">Rock</h1>
     <h1 class="paper">Paper</h1>
     <h1 class="scissor">Scissor</h1>
     <button class="play">Play</button>
-    <br>
-    <div class="popup" onclick="myFunction()">
+    <div class="popup" onclick="openRulesPopup()">
         <button class="rules">Rules</button>
         <span class="popuptext" id="myPopup">
-                    The rules of Rock Paper Scissor are simple. Rock beats Scissor, Paper beats Rock and Scissor beats Paper.
-                    The game is finished when one player gets three wins. Equal move results in a draw and neither player gets a point.
-                </span>
+            <p>The rules of Rock Paper Scissor are simple.</p>
+            <p>Rock beats Scissor, Paper beats Rock and Scissor beats Paper.</p>
+            <p>Equal move results in a draw and neither player gets a point.</p>
+            <p>The game is finished when one player gets three wins.</p>
+            <br>
+            <!-- <button type="button" class="btn">Close</button> -->
+        </span>
     </div>
 </div>
 
@@ -45,17 +58,17 @@
     </div>
     <div class="connect">
         <h3>Connect with us</h3>
-        <p class="fb"><a href="#">Facebook</a></p><br>
-        <p class="ig"><a href="#">Instagram</a></p>
+        <p class="fb"><a href="https://www.facebook.com" target="_blank">Facebook</a></p><br>
+        <p class="ig"><a href="https://www.instagram.com" target="_blank">Instagram</a></p>
     </div>
 </footer>
-</body>
 
 <script>
-    function myFunction() {
-        var popup = document.getElementById("myPopup");
+    let popup = document.getElementById("myPopup");
+
+    function openRulesPopup() {
         popup.classList.toggle("show");
     }
 </script>
-
+</body>
 </html>
