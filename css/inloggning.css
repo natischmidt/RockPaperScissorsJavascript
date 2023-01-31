@@ -1,6 +1,19 @@
 * {
     box-sizing: border-box;
 }
+#evil-button {
+    position: absolute;
+    white-space: nowrap;
+    font-size: 2rem;
+}
+
+.movingbutton body {
+    margin: 0;
+    width: 100vh;
+    height: 100vh;
+    overflow: hidden;
+
+}
 
 body {
     background-image: url("../img/inlogg.jpg");
