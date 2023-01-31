@@ -3,7 +3,7 @@ const OFFSET = 100
 
 
 evilButton.addEventListener('click', () => {
-    alert('Nice try')
+    alert('You naughty naughty')
     window.close()
 })
 
