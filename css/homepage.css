@@ -18,6 +18,7 @@ body {
 
 .rules {
     margin-top: 25px;
+    margin-bottom: 5px;
     padding: 20px;
 }
 
@@ -26,7 +27,7 @@ body {
 }
 
 .logout {
-    margin-top: 10px;
+    margin-top: 5px;
     border-radius: 15px;
 }
 

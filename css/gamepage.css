@@ -1,0 +1,7 @@
+body {
+    background-color: rgba(33, 234, 228, 0.67);
+    background-image: url("");
+    background-blend-mode: hard-light;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
