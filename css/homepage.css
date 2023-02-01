@@ -1,8 +1,8 @@
 body {
-    background-color: #6ce1a6;
+    background-color: rgba(33, 234, 228, 0.67);
     background-image: url("../img/retro palm trees.jpg");
     background-size: cover;
-    background-blend-mode: multiply;
+    background-blend-mode: hard-light;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -26,10 +26,7 @@ body {
     font-size: smaller;
 }
 
-.logout {
-    margin-top: 5px;
-    border-radius: 15px;
-}
+
 
 button {
     border: solid #72e56c;
@@ -187,10 +184,10 @@ button:hover {
 
 @media (max-width: 500px){
     body {
-        background-color: #6ce1a6;
+        background-color: rgba(33, 234, 228, 0.67);
         background-image: url("../img/retro palm trees.jpg");
         background-position: center;
-        background-blend-mode: multiply;
+        background-blend-mode: hard-light;
         font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -223,10 +220,10 @@ button:hover {
 
 @media (max-width: 800px){
     body {
-        background-color: #6ce1a6;
+        background-color: rgba(33, 234, 228, 0.67);
         background-image: url("../img/retro palm trees.jpg");
         background-position: center;
-        background-blend-mode: multiply;
+        background-blend-mode: hard-light;
         font-family: Arial, Helvetica, sans-serif;
     }
 
@@ -251,11 +248,11 @@ button:hover {
 
 @media (max-width: 1200px) {
     body {
-        background-color: #6ce1a6;
+        background-color: rgba(33, 234, 228, 0.67);
         background-image: url("../img/retro palm trees.jpg");
         background-position: center;
         background-size: cover;
-        background-blend-mode: multiply;
+        background-blend-mode: hard-light;
         font-family: Arial, Helvetica, sans-serif;
     }
 
