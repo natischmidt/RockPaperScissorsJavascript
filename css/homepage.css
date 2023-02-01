@@ -29,7 +29,7 @@ body {
 
 
 button {
-    border: solid #72e56c;
+    border-color: #ac58fb;
     background-color: lightgray;
     border-radius: 20px;
     padding: 10px;
@@ -52,7 +52,7 @@ button {
     width: 300px;
     border-radius: 10px;
     padding: 10px 10px;
-    background-color: rgb(99, 225, 99);
+    background-color: rgb(112, 135, 220);
     color: #000000;
     font-size: 20px;
     text-align: center;
@@ -107,7 +107,7 @@ button {
 }
 
 .play {
-    border-color: #7bea77;
+    border-color: #ac58fb;
     border-radius: 20px;
     padding: 25px 40px;
     background-color: lightgray;
@@ -121,6 +121,7 @@ button {
     font-size: 80px;
     margin: -2px;
     padding-top: 5px;
+    text-shadow: -5px -5px black;
 }
 
 .footer {
@@ -302,6 +303,7 @@ button:hover {
         padding: 0;
         list-style: none;
     }
+
 }
 
 
