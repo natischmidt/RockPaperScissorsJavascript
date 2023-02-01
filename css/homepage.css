@@ -277,11 +277,11 @@ button:hover {
 
 @media (min-width: 1200px) {
     body {
-        background-color: #6ce1a6;
+        background-color: rgba(33, 234, 228, 0.67);
         background-image: url("../img/retro palm trees.jpg");
         background-position: center;
         background-size: cover;
-        background-blend-mode: multiply;
+        background-blend-mode: hard-light;
         font-family: Arial, Helvetica, sans-serif;
     }
 
