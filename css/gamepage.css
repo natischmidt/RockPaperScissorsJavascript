@@ -23,9 +23,79 @@ button {
     padding: 10px;
 }
 
-div {
-    display: inline-block;
-    border: solid red;
+.player-opponent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -100px;
+    gap: 5rem;
+    overflow: hidden; /* add this to contain floated children */
+}
+
+.playerchoice {
+    /*float:left; !* add this *!*/
+    border: 1px solid #ff0000;
+    padding: 10px 10px 250px 10px;
+    margin-right: -20px;
+    color: #ff0000;
+    font-size: 50px;
+}
+
+.opchoice {
+    border: 1px solid #ff0000;
+    padding: 10px 10px 250px 10px;
+    margin-left: 80px;
+    color: #ff0000;
+    font-size: 50px;
+    /*float: left; !* add this *!*/
+}
+
+.scoreboard {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    flex-direction: column;
+    color: #FFFFFF;
+    gap: 1rem;
+}
+
+.scoretext {
+    border-bottom: solid 4px;
+    margin-right: 60px;
+    margin-bottom: -50px;
+}
+
+.score {
+    border: solid white;
+    flex-direction: row;
+    padding: 100px 100px 100px 300px;
+}
+
+.choices {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: -150px;
+    overflow: hidden;
+}
+
+.sign {
+    margin-top: 200px;
+    padding: 100px;
+    opacity: 0.3;
+}
+
+.btn-rock {
+
+}
+
+.btn-scissor {
+
+}
+
+.btn-paper {
+
 }
 
 @media (max-width: 500px) {
@@ -43,6 +113,7 @@ div {
         background-color: rgba(33, 234, 228, 0.67);
         background-image: url("../img/retro palm trees.jpg");
         background-position: center;
+        background-size: cover;
         background-blend-mode: hard-light;
         font-family: Arial, Helvetica, sans-serif;
     }
