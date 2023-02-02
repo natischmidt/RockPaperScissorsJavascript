@@ -61,14 +61,20 @@ button {
 
 .scoretext {
     border-bottom: solid 4px;
-    margin-right: 60px;
+    margin-right: 55px;
     margin-bottom: -50px;
 }
 
+.scoreboard p {
+    margin: -10px 0px 10px 0;
+}
 .score {
+    display: flex;
     border: solid white;
-    flex-direction: row;
-    padding: 100px 100px 100px 300px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 30px 100px 5px 10px;
 }
 
 .choices {
@@ -85,6 +91,11 @@ button {
     border-radius: 0;
     padding: 0px;
     opacity: 0.7;
+}
+
+img {
+    width: 150px;
+    max-height: 150px;
 }
 
 .btn-rock {
