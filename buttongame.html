@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script defer src="js/movingbutton.js"></script>
+    <link rel="stylesheet" href="css/movingbutton.css">
+    <style>
+        body {
+            margin: 0;
+            width: 100vh;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        #evil-button {
+            position: absolute;
+            white-space: nowrap;
+            font-size: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <a href="homepage.html">
+        <button class="button">
+            Tillbaka
+        </button>
+    </a>
+    <div class="popup" onclick="openRulesPopup()">
+        <button class="rules">Rules</button>
+        <span class="popuptext" id="myPopup">
+            <p>The rules of <em>Click the button</em> are simple.</p>
+            <p>Try your best to click the button.</p>
+            <p>If you click the button you become rich.</p>
+            <p>When you get tired of trying to click it please press "Tillbaka".</p>
+            <p>Got it? </p>
+            <p class="close-text">Press <strong><em>here</em></strong> to close!</p>
+        </span>
+    </div>
+
+
+</div>
+
+<button id="evil-button">CANT TOUCH THIS</button>
+
+</body>
+</html>
