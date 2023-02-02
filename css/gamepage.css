@@ -142,12 +142,15 @@ button {
 }
 
 .popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    display: inline-block;
     cursor: pointer;
 }
 
 .popup .rules {
+    margin-top: 10px;
     border-radius: 20px;
     padding: 20px;
     font-weight: bolder;
@@ -166,8 +169,8 @@ button {
     z-index: 1;
     bottom: 175%;
     left: 70%;
-    margin-bottom: -250px; /*Lagt till denna för att flytta rutan nedåt */
-    margin-left: -165px;
+    margin-bottom: 150px; /*Lagt till denna för att flytta rutan nedåt */
+    margin-left: -375px;
 }
 
 .popup .popuptext::after .btn {
