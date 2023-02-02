@@ -73,7 +73,7 @@ button {
 
 .choices {
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: center;
     gap: 2rem;
     margin-top: -150px;
@@ -82,8 +82,9 @@ button {
 
 .sign {
     margin-top: 200px;
-    padding: 100px;
-    opacity: 0.3;
+    border-radius: 0;
+    padding: 0px;
+    opacity: 0.7;
 }
 
 .btn-rock {
@@ -152,7 +153,7 @@ button {
 .popup .rules {
     margin-top: 10px;
     border-radius: 20px;
-    padding: 20px;
+    padding: 10px;
     font-weight: bolder;
 }
 
@@ -169,8 +170,8 @@ button {
     z-index: 1;
     bottom: 175%;
     left: 70%;
-    margin-bottom: 150px; /*Lagt till denna för att flytta rutan nedåt */
-    margin-left: -375px;
+    margin-bottom: 125px; /*Lagt till denna för att flytta rutan nedåt */
+    margin-left: -500px;
 }
 
 .popup .popuptext::after .btn {
