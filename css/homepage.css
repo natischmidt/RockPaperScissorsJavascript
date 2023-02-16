@@ -67,6 +67,7 @@ button {
 }
 
 .popup .popuptext::after .btn {
+    content: '';
     position: absolute;
     top: 100%;
     left: 50%;

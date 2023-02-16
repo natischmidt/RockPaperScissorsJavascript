@@ -29,12 +29,10 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-
 }
 
 .navbar-links li {
     list-style: none;
-
 }
 
 .navbar-links li a {
@@ -43,7 +41,6 @@ body {
     padding: 1rem;
     display: block;
 }
-
 
 .navbar-links li:hover {
     background-color: #555;
@@ -67,22 +64,18 @@ body {
     border-radius: 10px;
 }
 
-
-
-
 .player-opponent{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 25px;
-    gap: 2rem;
+    gap: 1rem;
     overflow: hidden; /* add this to contain floated children */
 }
 
 .playerchoice {
     border: 1px solid #ff0000;
     padding: 10px 10px 250px 10px;
-    margin-right: -20px;
     color: #ff0000;
     font-size: 50px;
 }
@@ -90,7 +83,6 @@ body {
 .opchoice {
     border: 1px solid #ff0000;
     padding: 10px 10px 250px 10px;
-    margin-left: 80px;
     color: #ff0000;
     font-size: 50px;
 }
@@ -101,7 +93,7 @@ body {
     justify-content: flex-end;
     align-items: flex-end;
     flex-direction: column;
-    color: darkmagenta;
+    color: #ffffff;
     gap: 1rem;
 }
 
@@ -128,7 +120,7 @@ body {
     align-items: baseline;
     justify-content: center;
     gap: 1rem;
-    margin-top: -150px;
+    margin-top: -175px;
     overflow: hidden;
 }
 
@@ -137,6 +129,7 @@ body {
     border-radius: 0;
     padding: 5px;
     opacity: 0.7;
+    background-color: hotpink;
 }
 
 img {
@@ -190,6 +183,7 @@ img {
     .navbar-links.active {
         display: flex;
     }
+
     body {
         background-color: rgba(33, 234, 228, 0.67);
         background-image: url("../img/retro palm trees.jpg");
@@ -198,7 +192,6 @@ img {
         background-blend-mode: hard-light;
         font-family: Arial, Helvetica, sans-serif;
     }
-
 
     .scoreboard {
         margin-top: 20px;
@@ -234,6 +227,7 @@ img {
 
 @media (max-width: 800px) {
     body {
+        height: 100vh;
         background-color: rgba(33, 234, 228, 0.67);
         background-image: url("../img/retro palm trees.jpg");
         background-position: center;
@@ -251,10 +245,42 @@ img {
         padding: 0;
         list-style: none;
     }
+
+    .scoreboard {
+        margin-top: 20px;
+        margin-bottom: -10px;
+    }
+
+    .player-opponent{
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .playerchoice {
+        border: 1px solid #ff0000;
+        padding: 10px 10px 150px 10px;
+        margin-right: -50px;
+        color: #ff0000;
+        font-size: 40px;
+    }
+
+    .opchoice {
+        border: 1px solid #ff0000;
+        padding: 10px 10px 150px 10px;
+        margin-left: 20px;
+        color: #ff0000;
+        font-size: 40px;
+    }
+
+    img {
+        width: 150px;
+        max-height: 150px;
+    }
 }
 
 @media (max-width: 1200px) {
     body {
+        height: 100vh;
         background-color: rgba(33, 234, 228, 0.67);
         background-image: url("../img/retro palm trees.jpg");
         background-position: center;
@@ -271,6 +297,37 @@ img {
         margin: 0;
         padding: 0;
         list-style: none;
+    }
+
+    .scoreboard {
+        margin-top: 20px;
+        margin-bottom: -10px;
+    }
+
+    .player-opponent{
+        display: flex;
+        margin-top: 15px;
+    }
+
+    .playerchoice {
+        border: 1px solid #ff0000;
+        padding: 10px 10px 150px 10px;
+        margin-right: -50px;
+        color: #ff0000;
+        font-size: 40px;
+    }
+
+    .opchoice {
+        border: 1px solid #ff0000;
+        padding: 10px 10px 150px 10px;
+        margin-left: 20px;
+        color: #ff0000;
+        font-size: 40px;
+    }
+
+    img {
+        width: 125px;
+        max-height: 125px;
     }
 }
 
@@ -308,8 +365,6 @@ img {
     border-radius: 5px;
     padding: 10px;
     font-weight: bolder;
-
-
 }
 
 .popup .popuptext {
