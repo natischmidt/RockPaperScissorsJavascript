@@ -55,6 +55,7 @@ body {
     justify-content: space-between;
     width: 31px;
     height: 21px;
+
 }
 
 .toggle-button .bar {
@@ -62,6 +63,7 @@ body {
     width: 100%;
     background-color: white;
     border-radius: 10px;
+
 }
 
 .player-opponent{
@@ -201,6 +203,7 @@ img {
     .player-opponent{
         display: flex;
         margin-top: 15px;
+
     }
 
     .playerchoice {
@@ -223,6 +226,7 @@ img {
         width: 100px;
         max-height: 200px;
     }
+
 }
 
 @media (max-width: 800px) {
@@ -307,6 +311,7 @@ img {
     .player-opponent{
         display: flex;
         margin-top: 15px;
+
     }
 
     .playerchoice {
@@ -329,28 +334,15 @@ img {
         width: 125px;
         max-height: 125px;
     }
+
+    .player-opponent img {
+
+        margin-left: 65px;
+
+    }
 }
 
-/*@media (min-width: 1200px) {*/
-/*    body {*/
-/*        background-color: rgba(33, 234, 228, 0.67);*/
-/*        background-image: url("../img/retro palm trees.jpg");*/
-/*        background-position: center;*/
-/*        background-size: cover;*/
-/*        background-blend-mode: hard-light;*/
-/*        font-family: Arial, Helvetica, sans-serif;*/
-/*    }*/
 
-/*    .nav-list {*/
-/*        display: flex;*/
-/*        flex-wrap: wrap;*/
-/*        justify-content: flex-start;*/
-/*        gap: 1rem;*/
-/*        margin: 0;*/
-/*        padding: 0;*/
-/*        list-style: none;*/
-/*    }*/
-/*}*/
 
 .popup {
     display: flex;
