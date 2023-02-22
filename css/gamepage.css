@@ -20,11 +20,9 @@ body {
 }
 
 .brandtitle {
-    font-family: Magneto;
-    color: hotpink;
+    font-family: "Franklin Gothic Medium";
     font-size: 1.5rem;
     margin: .5rem;
-    padding-left: 20px;
 }
 
 .navbar-links ul {
@@ -92,7 +90,7 @@ body {
 }
 
 .scoreboard {
-    margin-top: 30px;
+    margin-top: 50px;
     margin-bottom: -200px;
     padding-right: 200px;
     display: flex;

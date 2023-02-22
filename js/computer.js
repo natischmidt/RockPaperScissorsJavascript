@@ -13,9 +13,8 @@ toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
-function openBody(){
-    document.getElementById("bodyid").style.visibility= 'visible' ;
-    document.getElementById("start-btn").style.visibility = 'hidden' ;
-    document.getElementById("popup").style.visibility = 'hidden' ;
 
+let showbody = document.getElementById("start-btn");
+function openBody(){
+    showbody.classList.toggle("bodyid");
 }

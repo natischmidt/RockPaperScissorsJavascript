@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <link rel="stylesheet" href="css/computer.css">
+    <link rel="stylesheet" href="css/computer.css">
     <script defer src="js/computer.js"></script>
 </head>
-<body id ='bodyid'>
+<body>
 <nav class="navbar">
-    <div class="brandtitle"> <strong>Team Hello?!</strong>
+    <div class="brandtitle"><strong>Team Hello?!</strong>
     </div>
     <a href="#" class="toggle-button">
         <span class="bar"></span>
@@ -30,30 +30,35 @@
     </div>
 </nav>
 
-<div class="scoreboard">
-    <div class="scoretext">
-        Scoreboard
+<div class="bodyid" id="bodyid">
+
+
+    <div class="scoreboard">
+        <div class="scoretext">
+            Scoreboard
+        </div>
+        <div class="score">
+            <h3>Player</h3>
+            <p>sada</p>
+            <p>sada</p>
+            <p>sada</p>
+            <h3>Opponent</h3>
+            <p>sad</p>
+            <p>sada</p>
+            <p>sada</p>
+        </div>
+
     </div>
-    <div class="score">
-        <h3>Player</h3>
-        <p>sada</p>
-        <p>sada</p>
-        <p>sada</p>
-        <h3>Opponent</h3>
-        <p>sad</p>
-        <p>sada</p>
-        <p>sada</p>
-    </div>
 
-</div>
-<div id="start-btn" onclick="openBody()">
-    <button class="start">Start</button>
+    <div class="bigdiv" id="bigdiv">
+        <div class="start-btn" id="start-btn" onclick="openBody()">
+            <button class="start">Start</button>
 
-</div>
+        </div>
 
-<div id="popup" onclick="openRulesPopup()">
-    <button class="rules">Rules</button>
-    <span class="popuptext" id="myPopup">
+        <div class="popup" id="popup" onclick="openRulesPopup()">
+            <button class="rules">Rules</button>
+            <span class="popuptext" id="myPopup">
             <p>The rules of Rock Paper Scissor are simple.</p>
             <p>Rock beats Scissor, Paper beats Rock and Scissor beats Paper.</p>
             <p>Equal move results in a draw and neither player gets a point.</p>
@@ -61,25 +66,28 @@
             <p>Got it? </p>
             <p class="close-text">Press <strong><em>here</em></strong> to close!</p>
         </span>
-</div>
-
-<div class="player-opponent">
-    <div class="playerchoice">
-        player1
+        </div>
     </div>
-    <img src="img/MicrosoftTeams-image.png">
-    <div class="opchoice">
-        player2
+
+    <div class="player-opponent">
+        <div class="playerchoice">
+            player1
+        </div>
+        <img src="img/MicrosoftTeams-image.png">
+        <div class="opchoice">
+            player2
+        </div>
+    </div>
+
+    <div class="choices">
+        <button class="btn-rock"><img src="img/rock-img.png" alt="picture of closed hand"></button>
+
+        <button class="btn-scissor"><img src="img/scissor-img.png" alt="picture of a scissorhand"></button>
+
+        <button class="btn-paper"><img src="img/paper-img.png" alt="picutre of open palm of hand"></button>
     </div>
 </div>
 
-<div class="choices">
-    <button class="btn-rock"> <img src="img/rock-img.png" alt="picture of closed hand"></button>
-
-    <button class="btn-scissor"> <img src="img/scissor-img.png" alt="picture of a scissorhand"></button>
-
-    <button class="btn-paper"> <img src="img/paper-img.png" alt="picutre of open palm of hand"> </button>
-</div>
 
 </body>
 </html>
