@@ -6,7 +6,7 @@
   <link rel="stylesheet" href="css/computer.css">
     <script defer src="js/computer.js"></script>
 </head>
-<body>
+<body id ='bodyid'>
 <nav class="navbar">
     <div class="brandtitle"> <strong>Team Hello?!</strong>
     </div>
@@ -44,11 +44,14 @@
         <p>sada</p>
         <p>sada</p>
     </div>
+
 </div>
-<div class="start-btn">
+<div id="start-btn" onclick="openBody()">
     <button class="start">Start</button>
+
 </div>
-<div class="popup" onclick="openRulesPopup()">
+
+<div id="popup" onclick="openRulesPopup()">
     <button class="rules">Rules</button>
     <span class="popuptext" id="myPopup">
             <p>The rules of Rock Paper Scissor are simple.</p>
