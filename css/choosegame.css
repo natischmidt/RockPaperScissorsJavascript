@@ -77,8 +77,8 @@ body {
 }
 
 .popup .rules {
-
     visibility: visible;
+    cursor: pointer;
     margin-top: 10px;
     border-radius: 5px;
     padding: 30px;
@@ -136,3 +136,24 @@ body {
         opacity: 1;
     }
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.play-buttons {
+    gap: 1rem;
+}
+
+.pve, .pvp {
+    padding: 20px;
+    margin: 300px 5px 5px 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+

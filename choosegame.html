@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-  <link rel="stylesheet" href="css/choosegame.css">
+    <link rel="stylesheet" href="css/choosegame.css">
+    <script src="js/homepage.js"></script>
 </head>
+
 <body>
 <nav class="navbar">
   <div class="brandtitle"> <strong>Användare som är inloggad</strong>
@@ -30,6 +32,11 @@
 </nav>
 
 <div class="container">
+    <div class="play-buttons">
+        <a href="game.html"><button class="pvp">Player vs Player</button></a>
+        <a href="computer.html"><button class="pve">Player vs Computer</button></a>
+    </div>
+
   <div class="popup" id="popup" onclick="openRulesPopup()">
     <button class="rules">Rules</button>
     <span class="popuptext" id="myPopup">
@@ -42,12 +49,7 @@
         </span>
   </div>
 
-  <div>
 
-      <button class="start"><a href="game.html">Start</a></button>
-      <button class="start"><a href="computer.html">Start</a></button>
-
-  </div>
 
   <div>
 

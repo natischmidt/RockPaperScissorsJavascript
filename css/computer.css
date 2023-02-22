@@ -11,10 +11,6 @@ body {
     padding: 0;
 }
 
-.bodyid {
-    visibility: hidden;
-}
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -94,7 +90,7 @@ body {
 }
 
 .scoreboard {
-    margin-top: 30px;
+    margin-top: 40px;
     margin-bottom: -200px;
     padding-right: 200px;
     display: flex;
@@ -175,22 +171,6 @@ img {
     border-radius: 5px;
     padding: 30px;
     font-size: 26px;
-
-}
-.start {
-    visibility: visible;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 30px;
-    font-size: 26px;
-}
-
-
-
-.start-btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
 }
 
