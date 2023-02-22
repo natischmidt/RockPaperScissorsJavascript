@@ -152,13 +152,13 @@ body {
     padding: 25px;
 }
 
-.play {
+.newgame, .opengames, .playcomputer {
     border-color: #ac58fb;
     border-radius: 20px;
     padding: 25px 40px;
     background-color: lightgray;
     color: #000000;
-    margin: 40px 0 0 0;
+    margin: 5px 0 0 0;
 }
 
 .container h1 {
@@ -192,7 +192,7 @@ body {
 
 h3 {
     border-bottom: solid;
-    color: #70e157;
+    color: #ffffff;
 }
 
 .fb {
