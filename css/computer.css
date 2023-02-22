@@ -77,18 +77,176 @@ body {
     font-size: smaller;
 }
 
+body {
+    box-sizing: border-box;
+    height: 100vh;
+    background-color: rgba(33, 234, 228, 0.67);
+    background-image: url("../img/retro palm trees.jpg");
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: hard-light;
+    font-family: Magneto sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
 
+.brandtitle {
+    font-family: Magneto;
+    color: hotpink;
+    font-size: 1.5rem;
+    margin: .5rem;
+    padding-left: 20px;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 0.75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 31px;
+    height: 21px;
+
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+
+}
+
+.player-opponent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 1rem;
+    overflow: hidden; /* add this to contain floated children */
+}
+
+.playerchoice {
+    border: 1px solid #ff0000;
+    padding: 10px 10px 250px 10px;
+    color: #ff0000;
+    font-size: 50px;
+}
+
+.opchoice {
+    border: 1px solid #ff0000;
+    padding: 10px 10px 250px 10px;
+    color: #ff0000;
+    font-size: 50px;
+}
+
+.scoreboard {
+    margin-top: 30px;
+    margin-bottom: -200px;
+    padding-right: 200px;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
+    color: #ffffff;
+
+}
+
+.scoretext {
+    border-bottom: solid 4px;
+    margin-right: 55px;
+    margin-bottom: -50px;
+}
+
+.scoreboard p {
+    margin: -10px 0px 10px 0;
+    padding: 20px 50px 0px 10px;
+    border-radius: 20px;
+}
+
+.score {
+    border: solid hotpink;
+    padding: 20px;
+    min-width: 300px;
+}
+
+.score h3 {
+    border-bottom: solid hotpink;
+}
+
+.choices {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: -175px;
+    overflow: hidden;
+}
+
+.sign {
+    margin-top: 200px;
+    border-radius: 0;
+    padding: 5px;
+    opacity: 0.7;
+    background-color: hotpink;
+}
+
+img {
+    width: 150px;
+    max-height: 150px;
+}
+
+.btn-rock,
+.btn-paper,
+.btn-scissor {
+    margin-top: 200px;
+    border-radius: 0;
+    padding: 5px;
+    opacity: 0.7;
+    background-color: hotpink;
+}
 
 .popup {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: relative;
-    display: inline-block;
     cursor: pointer;
 }
 
 .popup .rules {
-    border-radius: 20px;
-    padding: 20px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 10px;
     font-weight: bolder;
 }
 
@@ -105,12 +263,11 @@ body {
     z-index: 1;
     bottom: 175%;
     left: 70%;
-    margin-bottom: -250px; /*Lagt till denna för att flytta rutan nedåt */
-    margin-left: -165px;
+    margin-bottom: 125px; /*Lagt till denna för att flytta rutan nedåt */
+    margin-left: -500px;
 }
 
 .popup .popuptext::after .btn {
-    content: '';
     position: absolute;
     top: 100%;
     left: 50%;
@@ -125,7 +282,6 @@ body {
     -webkit-animation: fadeIn 1s;
     animation: fadeIn 1s;
 }
-
 
 @-webkit-keyframes fadeIn {
     from {
