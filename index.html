@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPS</title>
     <link rel="stylesheet" href="css/inloggning.css">
+    <script defer src="js/inlog.js"></script>
 </head>
 
 <body>
@@ -13,11 +14,11 @@
 <div class="container" id="container">
     <div class="form-container sign-up-container"></div>
     <div class="form-container sign-in-container">
-        <form method="GET" action="homepage.html">
+        <form>
             <h1>Inloggning</h1>
-            <input type="email" placeholder="Mejl"/>
-            <input type="password" placeholder="Lösenord"/>
-            <button>Logga in</button>
+            <input id="email" type="email" placeholder="Mejl"/>
+            <input id="password" type="password" placeholder="Lösenord"/>
+            <button id="loginbutton">Logga in</button>
         </form>
     </div>
 

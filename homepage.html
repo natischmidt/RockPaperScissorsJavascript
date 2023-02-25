@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/homepage.css">
-    <script defer src="js/homepage.js"></script>
+    <script defer src="js/homepage.js" type="module"></script>
     <title>$Title$</title>
 </head>
 
 <body>
 <nav class="navbar">
-    <div class="brandtitle"> <strong>Insert welcome message</strong>
+    <div id="brand-title" class="brandtitle"> <strong></strong>
     </div>
     <a href="#" class="toggle-button">
         <span class="bar"></span>
@@ -21,7 +21,7 @@
     <div class="navbar-links">
         <ul>
             <li>
-                <a href="index.html">Logout</a>
+                <a id="logout-button" href="index.html">Logout</a>
             </li>
             <li>
                 <a href="buttongame.html">Other Games</a>

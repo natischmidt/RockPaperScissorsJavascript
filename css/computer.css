@@ -66,38 +66,39 @@ body {
     border-radius: 10px;
 }
 
+.bodyid {
+    margin-top: 300px;
+}
+
 .player-opponent{
     display: flex;
     align-items: center;
     justify-content: center;
     margin-top: 25px;
-    gap: 1rem;
+    gap: 2rem;
     overflow: hidden; /* add this to contain floated children */
 }
 
 .playerchoice {
-    border: 1px solid #ff0000;
+    color: #FFFFFF;
     padding: 10px 10px 250px 10px;
-    color: #ff0000;
     font-size: 50px;
 }
 
 .opchoice {
-    border: 1px solid #ff0000;
+    color: #FFFFFF;
     padding: 10px 10px 250px 10px;
-    color: #ff0000;
     font-size: 50px;
 }
 
 .scoreboard {
-    margin-top: 40px;
+    margin-top: 200px;
     margin-bottom: -200px;
     padding-right: 200px;
     display: flex;
     align-items: flex-end;
     flex-direction: column;
     color: #ffffff;
-
 }
 
 .scoretext {
