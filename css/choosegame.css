@@ -65,44 +65,36 @@ body {
     border-radius: 10px;
 }
 
-
-.popup {
-    visibility: visible;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
+.rules {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: lightgray;
     cursor: pointer;
 }
 
-.popup .rules {
-    visibility: visible;
+.popup {
+    position: relative;
+    display: inline-block;
     cursor: pointer;
-    margin-top: 10px;
-    border-radius: 5px;
-    padding: 30px;
-    font-size: 26px;
-
 }
 
 .popup .popuptext {
     visibility: hidden;
-    width: 300px;
-    border-radius: 10px;
-    padding: 10px 10px;
-    background-color: rgb(112, 135, 220);
-    color: #000000;
-    font-size: 20px;
+    width: 160px;
+    background-color: #555;
+    color: #fff;
     text-align: center;
+    border-radius: 6px;
+    padding: 8px 0;
     position: absolute;
     z-index: 1;
-    bottom: 175%;
-    left: 70%;
-    margin-bottom: -150px; /*Lagt till denna för att flytta rutan nedåt */
-    margin-left: -550px;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -80px;
 }
 
-.popup .popuptext::after .btn {
+.popup .popuptext::after {
+    content: "";
     position: absolute;
     top: 100%;
     left: 50%;
@@ -110,12 +102,6 @@ body {
     border-width: 5px;
     border-style: solid;
     border-color: #555 transparent transparent transparent;
-}
-
-.popup .show {
-    visibility: visible;
-    -webkit-animation: fadeIn 1s;
-    animation: fadeIn 1s;
 }
 
 @-webkit-keyframes fadeIn {

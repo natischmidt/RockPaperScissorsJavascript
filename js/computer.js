@@ -1,4 +1,4 @@
-import {clearChildren, computerMove, createMove, getUser} from "./functions.js";
+import {clearChildren, computerMove, createMove, getUser, scoreboard} from "./functions.js";
 
 let popup = document.getElementById("myPopup");
 
@@ -75,7 +75,6 @@ rock.addEventListener("click", () => {
     player.appendChild(createMove('Rock'));
     opponent.appendChild(createMove(opponentMove));
 
-
     if(totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS){
         const winner = document.createElement('h2');
         const restart = document.createElement('button');
@@ -88,9 +87,9 @@ rock.addEventListener("click", () => {
         restart.addEventListener('click', () =>  {
             window.location = 'computer.html';
         })
-
-
     }
+
+    scoreboard(totalPlayer, totalOpponent);
 })
 
 scissor.addEventListener("click", () => {
@@ -105,6 +104,7 @@ scissor.addEventListener("click", () => {
     checkResult('Scissor', opponentMove);
     player.appendChild(createMove('Scissor'));
     opponent.appendChild(createMove(opponentMove));
+
     if(totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS){
         const winner = document.createElement('h2');
         const restart = document.createElement('button');
@@ -117,8 +117,9 @@ scissor.addEventListener("click", () => {
         restart.addEventListener('click', () =>  {
             window.location = 'computer.html';
         })
-
     }
+
+    scoreboard(totalPlayer, totalOpponent);
 })
 
 paper.addEventListener("click", () => {
@@ -133,6 +134,7 @@ paper.addEventListener("click", () => {
     checkResult('Paper', opponentMove);
     player.appendChild(createMove('Paper'));
     opponent.appendChild(createMove(opponentMove));
+
     if(totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS){
         const winner = document.createElement('h2');
         const restart = document.createElement('button');
@@ -146,5 +148,7 @@ paper.addEventListener("click", () => {
             window.location = 'computer.html';
         })
     }
+
+    scoreboard(totalPlayer, totalOpponent);
 })
 

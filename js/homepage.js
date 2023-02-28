@@ -15,6 +15,7 @@ toggleButton.addEventListener('click', () => {
 
 
 document.getElementById('brand-title').innerHTML = `Welcome ${getUser()}`;
+
 const logoutButton = document.getElementById('logout-button');
 
 logoutButton.addEventListener("click", removeUser);

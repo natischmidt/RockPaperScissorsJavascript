@@ -76,12 +76,17 @@ body {
     gap: 1rem;
     flex-direction: row-reverse;
     flex-wrap: wrap;
-
+    margin-top: -70px;
 }
 
-
-
-
+.score {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    font-size: 20px;
+    margin-top: -50px;
+    margin-left: 50px;
+}
 
 .player-opponent{
     display: flex;
@@ -97,8 +102,7 @@ body {
     align-items: center;
     flex-direction: column;
     color: #FFFFFF;
-
-    padding: 10px 10px 250px 10px;
+    padding: 10px 10px 200px 10px;
     font-size: 63px;
     gap: 1rem;
 }
@@ -108,7 +112,7 @@ body {
     align-items: center;
     flex-direction: column;
     color: #FFFFFF;
-    padding: 10px 10px 250px 10px;
+    padding: 10px 10px 200px 10px;
     font-size: 63px;
     gap: 1rem;
 }
