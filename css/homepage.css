@@ -151,9 +151,8 @@ body {
     padding: 25px;
 }
 
-.newgame, .opengames, .playcomputer {
-    border-color: #ac58fb;
-    border-radius: 20px;
+.newgame, .opengames {
+    border-radius: 5px;
     padding: 25px 40px;
     background-color: lightgray;
     color: #000000;

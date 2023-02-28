@@ -1,25 +1,25 @@
-export function getUser(){
+export function getUser() {
     const username = localStorage.getItem('username');
 
-    if(username){
+    if (username) {
         return username;
     }
 
     window.location = 'index.html';
 }
 
-export function removeUser(){
+export function removeUser() {
     localStorage.removeItem('username');
 }
 
-export function computerMove(){
+export function computerMove() {
     const choices = ['Rock', 'Scissor', 'Paper'];
     const index = Math.floor(Math.random() * 3);
     return choices[index];
 }
 
-export function createMove(move){
-    switch (move){
+export function createMove(move) {
+    switch (move) {
         case 'Rock':
             const rockimage = document.createElement('img');
             rockimage.src = 'img/rock-img.png';
@@ -38,9 +38,10 @@ export function createMove(move){
     }
 }
 
-export function clearChildren(elementId){
+export function clearChildren(elementId) {
     const element = document.getElementById(elementId)
-    for(const child of element.children){
+    for (const child of element.children) {
         element.removeChild(child);
     }
 }
+

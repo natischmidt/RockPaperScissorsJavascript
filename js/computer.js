@@ -61,6 +61,7 @@ function checkResult(playerMove, opponentMove){
     }
 }
 
+
 rock.addEventListener("click", () => {
     if(totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS){
         return
@@ -73,10 +74,22 @@ rock.addEventListener("click", () => {
     checkResult('Rock', opponentMove);
     player.appendChild(createMove('Rock'));
     opponent.appendChild(createMove(opponentMove));
+
+
     if(totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS){
         const winner = document.createElement('h2');
+        const restart = document.createElement('button');
+
         winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser() + ' wins!' : 'Computer wins!';
+        restart.innerHTML = 'Restart game';
         document.getElementById('scoreboard').appendChild(winner);
+        document.getElementById('restart').appendChild(restart);
+
+        restart.addEventListener('click', () =>  {
+            window.location = 'computer.html';
+        })
+
+
     }
 })
 
@@ -94,8 +107,17 @@ scissor.addEventListener("click", () => {
     opponent.appendChild(createMove(opponentMove));
     if(totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS){
         const winner = document.createElement('h2');
+        const restart = document.createElement('button');
+
         winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser() + ' wins!' : 'Computer wins!';
+        restart.innerHTML = 'Restart game';
         document.getElementById('scoreboard').appendChild(winner);
+        document.getElementById('restart').appendChild(restart);
+
+        restart.addEventListener('click', () =>  {
+            window.location = 'computer.html';
+        })
+
     }
 })
 
@@ -113,8 +135,16 @@ paper.addEventListener("click", () => {
     opponent.appendChild(createMove(opponentMove));
     if(totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS){
         const winner = document.createElement('h2');
-        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser() + ' wins!' : 'Game Over! Computer wins!';
+        const restart = document.createElement('button');
+
+        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser() + ' wins!' : 'Computer wins!';
+        restart.innerHTML = 'Restart game';
         document.getElementById('scoreboard').appendChild(winner);
+        document.getElementById('restart').appendChild(restart);
+
+        restart.addEventListener('click', () =>  {
+            window.location = 'computer.html';
+        })
     }
 })
 
