@@ -18,8 +18,6 @@ export function computerMove(){
     return choices[index];
 }
 
-
-
 export function createMove(move){
     switch (move){
         case 'Rock':

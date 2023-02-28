@@ -1,5 +1,5 @@
 
-const loginButton = document.getElementById('loginbutton')
+const loginButton = document.getElementById('loginbutton');
 
 const redirectOnLogin = (event) => {
     event.preventDefault();
@@ -8,9 +8,9 @@ const redirectOnLogin = (event) => {
     console.log(email, password);
 
     if(email && password){
-        localStorage.setItem('username', email)
+        localStorage.setItem('username', email);
         window.location = 'homepage.html';
     }
 }
 
-loginButton.addEventListener('click', redirectOnLogin)
+loginButton.addEventListener('click', redirectOnLogin);
