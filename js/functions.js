@@ -47,13 +47,13 @@ export function clearChildren(elementId) {
 
 export function scoreboard(totalPlayer, totalOpponent){
     if(totalPlayer === 1){
-        document.getElementById('player-score').innerHTML = 'Player score: 1';
+        document.getElementById('player-score').innerHTML = 'Your score: 1';
     } else if (totalPlayer === 2){
-        document.getElementById('player-score').innerHTML = 'Player score: 2';
+        document.getElementById('player-score').innerHTML = 'Your score: 2';
     } else if (totalPlayer === 3){
-        document.getElementById('player-score').innerHTML = 'Player score: 3';
+        document.getElementById('player-score').innerHTML = 'Your score: 3';
     } else {
-        document.getElementById('player-score').innerHTML = 'Player score: 0';
+        document.getElementById('player-score').innerHTML = 'Your score: 0';
     }
 
     if(totalOpponent === 1){
@@ -64,6 +64,28 @@ export function scoreboard(totalPlayer, totalOpponent){
         document.getElementById('computer-score').innerHTML = 'Computer score: 3';
     } else {
         document.getElementById('computer-score').innerHTML = 'Computer score: 0';
+    }
+}
+
+export function scoreboardPvp(totalPlayer, totalOpponent){
+    if(totalPlayer === 1){
+        document.getElementById('player-score').innerHTML = 'Your score: 1';
+    } else if (totalPlayer === 2){
+        document.getElementById('player-score').innerHTML = 'Your score: 2';
+    } else if (totalPlayer === 3){
+        document.getElementById('player-score').innerHTML = 'Your score: 3';
+    } else {
+        document.getElementById('player-score').innerHTML = 'Your score: 0';
+    }
+
+    if(totalOpponent === 1){
+        document.getElementById('opponent-score').innerHTML = 'HämtaUserPls: 1';
+    } else if (totalOpponent === 2){
+        document.getElementById('opponent-score').innerHTML = 'HämtaUserPls: 2';
+    } else if (totalOpponent === 3){
+        document.getElementById('opponent-score').innerHTML = 'HämtaUserPls score: 3';
+    } else {
+        document.getElementById('opponent-score').innerHTML = 'HämtaUserPls: 0';
     }
 }
 
