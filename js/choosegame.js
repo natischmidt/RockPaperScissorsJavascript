@@ -2,7 +2,8 @@ import {getUser} from "./functions.js";
 
 document.getElementById('username').innerHTML = `${getUser()}`;
 
-const popup = document.getElementById("myPopup");
 function openRulesPopup() {
+    const popup = document.getElementById('myPopup');
     popup.classList.toggle("show");
 }
+
