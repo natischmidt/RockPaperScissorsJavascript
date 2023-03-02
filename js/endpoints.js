@@ -13,7 +13,7 @@ const rpsApi = {
 
     getToken: () => {
         fetch(urlGetToken)
-          .then(response => response.text())
+          .then(response => console.log(response.text()))
             .then(text => sessionStorage.setItem('token', text))
 
     },
@@ -25,7 +25,7 @@ const rpsApi = {
                 'Content-Type': 'application/json'},
             body: JSON.stringify({'username': name})
         })
-            .then(response => response.text())
+            .then(response => console.log(response.text()))
     },
 
     createNewGame: () => {
@@ -35,12 +35,12 @@ const rpsApi = {
                 'token': sessionStorage.getItem('token'),
                 'Content-Type': 'application/json'},
         })
-            .then(response => response.text())
+            .then(response => console.log(response.text()))
     },
 
     getListOfOpenGames: () => {
         fetch(getAllOpenGames)
-            .then(response => response.text())
+            .then(response => console.log(response.text()))
     },
 
     getGameInfoFromGame: (gameToken) => {
@@ -50,7 +50,7 @@ const rpsApi = {
                 'token': sessionStorage.getItem(gameToken),
                 'Content-Type': 'application/json'},
         })
-            .then(response => response.text())
+            .then(response => console.log(response.text()))
     },
 
     joinGame: (gameToken) => {
@@ -60,7 +60,7 @@ const rpsApi = {
                 'token': sessionStorage.getItem(gameToken),
                 'Content-Type': 'application/json'},
         })
-            .then(response => response.text())
+            .then(response => console.log(response.text()))
     },
 
 
