@@ -1,18 +1,20 @@
 import {updatePlayer, urlGetToken} from "./endpoints.js";
 import {getUser} from "./functions.js";
+import {rpsApi} from "./endpoints.js";
 
 const logginButton = document.getElementsByClassName('loginbutton');
 
 const setUsernameOnToken = (event) => {
     event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    console.log(email, password);
-
-    if (email && password) {
-        localStorage.setItem('username', email);
-        window.location = 'homepage.html';
-    }
+    const name = document.getElementById('email').value;
+    rpsApi. setPlayerName(name);
+    // const password = document.getElementById('password').value;
+    // console.log(name, password);
+    //
+    // if (email && password) {
+    //     localStorage.setItem('username', email);
+    //     window.location = 'homepage.html';
+    // }
 
 }
 

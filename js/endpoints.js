@@ -6,8 +6,7 @@ export const getGameInfo = 'http://localhost:8080/games/{id}';
 export const joinExistingGame = 'http://localhost:8080/join/game';
 export const makeMove = 'http://localhost:8080/games/move/{sign}';
 
-
-const rpsApi = {
+export const rpsApi = {
     setStorage: (token) => {sessionStorage.setItem('token', token)},
     getStorage: () => {sessionStorage.getItem('token')},
 
