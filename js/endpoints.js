@@ -13,8 +13,9 @@ const rpsApi = {
 
     getToken: () => {
         fetch(urlGetToken)
-            .then(response => response.text())
+          .then(response => response.text())
             .then(text => sessionStorage.setItem('token', text))
+
     },
 
     setPlayerName: (name) => {
