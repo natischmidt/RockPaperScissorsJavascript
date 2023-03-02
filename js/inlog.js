@@ -5,16 +5,16 @@ import {rpsApi} from "./endpoints.js";
 const logginButton = document.getElementsByClassName('loginbutton');
 
 const setUsernameOnToken = (event) => {
-    event.preventDefault();
+   // event.preventDefault();
     const name = document.getElementById('email').value;
     rpsApi. setPlayerName(name);
-    // const password = document.getElementById('password').value;
-    // console.log(name, password);
-    //
-    // if (email && password) {
-    //     localStorage.setItem('username', email);
-    //     window.location = 'homepage.html';
-    // }
+    const password = document.getElementById('password').value;
+    console.log(name, password);
+
+    if (name && password) {
+        localStorage.setItem('username', email);
+        window.location = 'homepage.html';
+    }
 
 }
 

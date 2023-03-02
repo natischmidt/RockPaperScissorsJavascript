@@ -1,18 +1,19 @@
-export const urlGetToken = 'http://localhost:8080/auth/token';
-export const updatePlayer = 'http://localhost:8080/user/name';
-export const createGame = 'http://localhost:8080/start';
-export const getAllOpenGames = 'http://localhost:8080/games';
-export const getGameInfo = 'http://localhost:8080/games/{id}';
-export const joinExistingGame = 'http://localhost:8080/join/game';
-export const makeMove = 'http://localhost:8080/games/move/{sign}';
+
 
 export const rpsApi = {
     setStorage: (token) => {sessionStorage.setItem('token', token)},
     getStorage: () => {sessionStorage.getItem('token')},
 
     getToken: () => {
-        fetch(urlGetToken)
+        fetch('http://localhost:8080/auth/register')
           .then(response => console.log(response.text()))
+            .then(text => sessionStorage.setItem('token', text))
+
+    },
+
+    getUuid: () => {
+        fetch('http://localhost:8080/auth/authenticate')
+            .then(response => console.log(response.text()))
             .then(text => sessionStorage.setItem('token', text))
 
     },
