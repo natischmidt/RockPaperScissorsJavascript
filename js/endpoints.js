@@ -11,11 +11,11 @@ export const rpsApi = {
 
     },
 
-    getUuid: () => {
+    //ge mig logiken
+    getUuid: (token) => {
         fetch('http://localhost:8080/auth/authenticate')
             .then(response => console.log(response.text()))
             .then(text => sessionStorage.setItem('token', text))
-
     },
 
     setPlayerName: (name) => {
