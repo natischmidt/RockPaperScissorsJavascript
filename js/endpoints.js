@@ -1,35 +1,44 @@
-
-
-export const rpsApi = {
-    setStorage: (token) => {sessionStorage.setItem('token', token)},
-    getStorage: () => {sessionStorage.getItem('token')},
+const rpsApi = {
+    setStorage: (token) => sessionStorage.setItem('token', token),
+    getStorage: () => sessionStorage.getItem('token'),
 
     getToken: () => {
-        fetch('http://localhost:8080/auth/register')
-          .then(response => console.log(response.text()))
-            .then(text => sessionStorage.setItem('token', text))
-
-    },
-
-    //ge mig logiken
-    getUuid: (token) => {
-        fetch('http://localhost:8080/auth/authenticate')
-            .then(response => console.log(response.text()))
-            .then(text => sessionStorage.setItem('token', text))
+        fetch('http://localhost:8080/auth/token')
+            .then(response => response.json()
+            )
+            .then(response => rpsApi.setStorage(response))
+            .then(text => console.log(text))
     },
 
     setPlayerName: (name) => {
-        fetch(updatePlayer, {
-            method: 'POST',
-            headers: {'token': sessionStorage.getItem('token'),
-                'Content-Type': 'application/json'},
-            body: JSON.stringify({'username': name})
+        return fetch('http://localhost:8080/user/name', {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+                'token': sessionStorage.getItem('token'),
+            },
+            body: JSON.stringify({username: name})
         })
-            .then(response => console.log(response.text()))
+            .then(response => response.json())
+            .catch(e => console.log(e));
     },
 
+    /*
+    setPlayerName: (name) => {
+        return fetch('http://localhost:8080/user/name', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'token': rpsApi.getStorage(),
+            },
+            body: JSON.stringify({username: name})
+        })
+            .then(response => response.text())
+            .catch(error => console.log(error))
+    }, */
+
     createNewGame: () => {
-        fetch(createGame, {
+        fetch('http://localhost:8080/start', {
             method: 'POST',
             headers: {
                 'token': sessionStorage.getItem('token'),
@@ -39,12 +48,12 @@ export const rpsApi = {
     },
 
     getListOfOpenGames: () => {
-        fetch(getAllOpenGames)
+        fetch('http://localhost:8080/games')
             .then(response => console.log(response.text()))
     },
 
     getGameInfoFromGame: (gameToken) => {
-        fetch(getGameInfo, {
+        fetch('http://localhost:8080/games/{id}', {
             method: 'GET',
             headers: {
                 'token': sessionStorage.getItem(gameToken),
@@ -54,7 +63,7 @@ export const rpsApi = {
     },
 
     joinGame: (gameToken) => {
-        fetch(joinExistingGame, {
+        fetch('http://localhost:8080/join/{id}', {
             method: 'POST',
             headers: {
                 'token': sessionStorage.getItem(gameToken),
