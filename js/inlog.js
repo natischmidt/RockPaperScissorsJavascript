@@ -1,19 +1,23 @@
+import {rpsApi} from "./endpoints.js";
+
 const loginButton = document.getElementById('loginbutton');
 
-const setUsernameOnToken = () => {
+const setUsernameOnToken = async (event) => {
+    /*event.preventDefault();*/
+    console.log('Bajs')
     const name = document.getElementById('email').value;
     const password = document.getElementById('password').value;
-    console.log(name);
-    rpsApi.setPlayerName(name)
-        .then(data => {
-            console.log(data);
-            /*
-            if (name && password) {
-                localStorage.setItem('username', name);
-                window.location = 'homepage.html';
-            } */
-        });
+    if(name && password) {
+        try {
+            await rpsApi.setPlayerName(name);
+            window.location = 'homepage.html';
+        } catch (error) {
+            console.log(error)
+        }
+    }
 }
+
+loginButton.addEventListener('click', (e) => setUsernameOnToken(e));
 
 
 

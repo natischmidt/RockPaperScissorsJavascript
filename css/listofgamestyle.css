@@ -1,12 +1,11 @@
 body {
     box-sizing: border-box;
     height: 100vh;
-    background-color: rgba(143, 132, 169, 0.67);
+    background-color: rgba(171, 131, 215, 0.67);
     background-image: url("../img/bakgrundsbild.webp");
-    background-position: center;
     background-size: cover;
-    background-blend-mode: hard-light;
-    font-family: Magneto sans-serif;
+    background-position: center;
+    font-family: Arial, Helvetica, sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -17,14 +16,13 @@ body {
     align-items: center;
     background-color: #333;
     color: white;
+    padding-right: 1rem;
 }
 
 .brandtitle {
-    font-family: Magneto;
-    color: hotpink;
+    font-family: "Franklin Gothic Medium";
     font-size: 1.5rem;
     margin: .5rem;
-    padding-left: 20px;
 }
 
 .navbar-links ul {

@@ -1,15 +1,28 @@
+import {rpsApi} from "./endpoints.js";
+
 export function getUser() {
-    const username = localStorage.getItem('username');
+    const userToken = rpsApi.getStorage();
+    const username = rpsApi.getPlayerName(userToken);
 
     if (username) {
-        return username;
+        return username
     }
-
     window.location = 'index.html';
 }
 
+export function startNewGame(){
+    const userToken = rpsApi.getStorage();
+    rpsApi.createNewGame(userToken);
+}
+
+export function createList(){
+    const gameList = document.getElementById('gamelist');
+    const createListItem = document.createElement('li');
+    gameList.appendChild(createListItem);
+}
+
 export function removeUser() {
-    localStorage.removeItem('username');
+    sessionStorage.removeItem('username');
 }
 
 export function computerMove() {
@@ -88,4 +101,6 @@ export function scoreboardPvp(totalPlayer, totalOpponent){
         document.getElementById('opponent-score').innerHTML = 'HämtaUserPls: 0';
     }
 }
+
+
 

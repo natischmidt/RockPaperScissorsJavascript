@@ -7,6 +7,7 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/choosegame.css">
     <script defer src="js/choosegame.js" type="module"></script>
+    <script defer src="js/endpoints.js" type="module"></script>
 </head>
 
 <body>
@@ -35,7 +36,7 @@
 
 <div class="container">
     <div class="play-buttons">
-        <a href="game.html"><button class="pvp">Player vs Player</button></a>
+        <a href="game.html"><button id="start" class="pvp" onclick="startNewGame()">Player vs Player</button></a>
         <a href="computer.html"><button class="pve">Player vs Computer</button></a>
     </div>
     <div class="popup" onclick="openRulesPopup()">

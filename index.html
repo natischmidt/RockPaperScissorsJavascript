@@ -13,23 +13,25 @@
 <div class="container" id="container">
     <div class="form-container sign-up-container"></div>
     <div class="form-container sign-in-container">
+        <form>
             <h1>Skapa ny användare</h1>
-           <input id="email" type="username" placeholder="Username">
+            </label><input id="email" type="username" placeholder="Username">
             <input id="password" type="password" placeholder="Lösenord">
-            <button id="loginbutton" onclick="setUsernameOnToken()">Click here</button>
+            <button id="loginbutton" type="button">Click here</button>
+        </form>
     </div>
 
     <div class="overlay-container">
         <div class="overlay">
             <div class="overlay-panel overlay-left"></div>
             <div class="overlay-panel overlay-right">
-                <h1>Login is for loosers</h1>
-                <p>ghjgjghj</p>
+                <h1>Welcome to Rock Paper Scissor</h1>
+                <p>Please type in your username and password!</p>
             </div>
         </div>
     </div>
 </div>
-<script src="js/endpoints.js"></script>
-<script src="js/inlog.js"></script>
+<script src="js/endpoints.js" type="module"></script>
+<script src="js/inlog.js" type="module"></script>
 </body>
 </html>
