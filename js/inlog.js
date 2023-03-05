@@ -17,7 +17,7 @@ const setUsernameOnToken = async (event) => {
     }
 }
 
-loginButton.addEventListener('click', (e) => setUsernameOnToken(e));
+loginButton.addEventListener('click', setUsernameOnToken);
 
 
 

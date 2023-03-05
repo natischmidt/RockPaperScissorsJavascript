@@ -1,6 +1,5 @@
-import {getUser, startNewGame} from "./functions.js";
+import {startNewGame} from "./functions.js";
 
-document.getElementById('username').innerHTML = `${getUser()}`;
 
 function openRulesPopup() {
     const popup = document.getElementById('myPopup');

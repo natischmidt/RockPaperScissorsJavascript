@@ -24,15 +24,17 @@ export const rpsApi = {
     },
 
     getPlayerName:(token) => {
-        return fetch('http://localhost:8080/user/username', {
+         return fetch('http://localhost:8080/user/username', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
                 'token': rpsApi.getStorage('token')
             },
         })
-            .then(response => response.json())
-            .catch(e => console.log(e))
+             .then(response => response.json())
+             .then(response => response.username)
+             .then(text => document.getElementById('brand-title').innerHTML = 'Welcome ' + text)
+             .catch(e => console.log(e))
     },
 
     createNewGame: (token) => {
@@ -49,6 +51,7 @@ export const rpsApi = {
     getListOfOpenGames: () => {
         return fetch('http://localhost:8080/games')
             .then(response => response.json())
+            .then(response => response.username)
             .catch(e => console.log(e))
     },
 

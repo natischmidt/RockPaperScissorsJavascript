@@ -1,13 +1,15 @@
 import {rpsApi} from "./endpoints.js";
 
-export function getUser() {
+export async function getUser() {
     const userToken = rpsApi.getStorage();
-    const username = rpsApi.getPlayerName(userToken);
+    const username = await rpsApi.getPlayerName(userToken);
+    console.log(username);
 
     if (username) {
         return username
     }
-    window.location = 'index.html';
+
+    //window.location = 'index.html';
 }
 
 export function startNewGame(){

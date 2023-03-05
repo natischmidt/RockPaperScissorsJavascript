@@ -1,4 +1,5 @@
 import {clearChildren, computerMove, createMove, getUser, scoreboard, scoreboardPvp} from "./functions.js";
+import {rpsApi} from "./endpoints.js";
 let popup = document.getElementById("myPopup");
 
 
@@ -10,7 +11,8 @@ toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
-document.getElementById('user-name').innerHTML = `${getUser()}`;
+const userToken = rpsApi.getStorage();
+document.getElementById('user-name').innerHTML = `${rpsApi.getPlayerName(userToken)}`;
 
 
 const player = document.getElementById('player');
