@@ -76,13 +76,13 @@ export function clearChildren(elementId) {
 
 export function scoreboard(totalPlayer, totalOpponent){
     if(totalPlayer === 1){
-        document.getElementById('player-score').innerHTML = 'Your score: 1';
+        getUser().then(username => document.getElementById('player-score').innerHTML = username + ' score: 1');
     } else if (totalPlayer === 2){
-        document.getElementById('player-score').innerHTML = 'Your score: 2';
+        getUser().then(username => document.getElementById('player-score').innerHTML = username + ' score: 2');
     } else if (totalPlayer === 3){
-        document.getElementById('player-score').innerHTML = 'Your score: 3';
+        getUser().then(username => document.getElementById('player-score').innerHTML = username + ' score: 3');
     } else {
-        document.getElementById('player-score').innerHTML = 'Your score: 0';
+        getUser().then(username => document.getElementById('player-score').innerHTML = username + ' score: 0');
     }
 
     if(totalOpponent === 1){
@@ -112,7 +112,7 @@ export function scoreboardPvp(totalPlayer, totalOpponent){
     } else if (totalOpponent === 2){
         document.getElementById('opponent-score').innerHTML = 'HämtaUserPls: 2';
     } else if (totalOpponent === 3){
-        document.getElementById('opponent-score').innerHTML = 'HämtaUserPls score: 3';
+        document.getElementById('opponent-score').innerHTML = 'HämtaUserPls: 3';
     } else {
         document.getElementById('opponent-score').innerHTML = 'HämtaUserPls: 0';
     }

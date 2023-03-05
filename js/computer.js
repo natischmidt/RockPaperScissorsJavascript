@@ -10,6 +10,9 @@ toggleButton.addEventListener('click', () => {
 
 getUser().then(username => document.getElementById('brand-title').innerHTML = username);
 
+getUser().then(username => document.getElementById('player').innerHTML = username + ':');
+
+
 const player = document.getElementById('player');
 const opponent = document.getElementById('opponent');
 const rock = document.getElementById('rock');
@@ -68,18 +71,32 @@ rock.addEventListener("click", () => {
         const winner = document.createElement('h2');
         const restart = document.createElement('button');
 
-        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser()
-            .then(username =>  username + ' wins!') : 'Computer wins!';
-        restart.innerHTML = 'Restart game';
-        document.getElementById('scoreboard').appendChild(winner);
-        document.getElementById('restart').appendChild(restart);
 
-        restart.addEventListener('click', () =>  {
-            window.location = 'computer.html';
-        })
+        if(totalPlayer === MAX_NUMBER_OF_WINS){
+            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + ' wins')
+
+            restart.innerHTML = 'Restart game';
+            document.getElementById('restart').appendChild(restart);
+            restart.addEventListener('click', () =>  {
+                window.location = 'computer.html';
+            })
+        }
+
+
+
+        // winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser()
+        //     .then(username =>  username + ' wins!') : 'Computer wins!';
+        // restart.innerHTML = 'Restart game';
+        // document.getElementById('scoreboard').appendChild(winner);
+        // document.getElementById('restart').appendChild(restart);
+        //
+        // restart.addEventListener('click', () =>  {
+        //     window.location = 'computer.html';
+        // })
     }
 
     scoreboard(totalPlayer, totalOpponent);
+
 })
 
 scissor.addEventListener("click", () => {
