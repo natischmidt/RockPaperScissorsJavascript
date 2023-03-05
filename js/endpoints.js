@@ -33,7 +33,6 @@ export const rpsApi = {
         })
              .then(response => response.json())
              .then(response => response.username)
-             .then(text => document.getElementById('brand-title').innerHTML = 'Welcome ' + text)
              .catch(e => console.log(e))
     },
 

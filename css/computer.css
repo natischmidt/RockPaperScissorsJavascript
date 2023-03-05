@@ -21,9 +21,8 @@ body {
 
 .brandtitle {
     font-family: "Franklin Gothic Medium";
-    color: #ffffff;
     font-size: 1.5rem;
-    padding-left: 20px;
+    margin: .5rem;
 }
 
 .navbar-links ul {

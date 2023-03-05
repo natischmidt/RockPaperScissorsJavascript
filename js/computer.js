@@ -8,10 +8,7 @@ toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
-
-
-
-document.getElementById('username').innerHTML = `${getUser()}`;
+getUser().then(username => document.getElementById('brand-title').innerHTML = username);
 
 const player = document.getElementById('player');
 const opponent = document.getElementById('opponent');
@@ -71,7 +68,8 @@ rock.addEventListener("click", () => {
         const winner = document.createElement('h2');
         const restart = document.createElement('button');
 
-        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser() + ' wins!' : 'Computer wins!';
+        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser()
+            .then(username =>  username + ' wins!') : 'Computer wins!';
         restart.innerHTML = 'Restart game';
         document.getElementById('scoreboard').appendChild(winner);
         document.getElementById('restart').appendChild(restart);
@@ -101,7 +99,8 @@ scissor.addEventListener("click", () => {
         const winner = document.createElement('h2');
         const restart = document.createElement('button');
 
-        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser() + ' wins!' : 'Computer wins!';
+        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser()
+            .then(username => '' + username + ' wins!') : 'Computer wins!';
         restart.innerHTML = 'Restart game';
         document.getElementById('scoreboard').appendChild(winner);
         document.getElementById('restart').appendChild(restart);
@@ -131,7 +130,8 @@ paper.addEventListener("click", () => {
         const winner = document.createElement('h2');
         const restart = document.createElement('button');
 
-        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser() + ' wins!' : 'Computer wins!';
+        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser().then(username =>
+            '' + username + ' wins!') : 'Computer wins!';
         restart.innerHTML = 'Restart game';
         document.getElementById('scoreboard').appendChild(winner);
         document.getElementById('restart').appendChild(restart);

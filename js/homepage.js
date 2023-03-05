@@ -13,8 +13,7 @@ toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
-
-document.getElementById('brand-title').innerHTML = `Welcome ${getUser()}`;
+getUser().then(username => document.getElementById('brand-title').innerHTML = 'Welcome ' + username);
 
 const logoutButton = document.getElementById('logout-button');
 

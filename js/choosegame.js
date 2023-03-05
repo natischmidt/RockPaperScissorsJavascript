@@ -1,4 +1,4 @@
-import {startNewGame} from "./functions.js";
+import {getUser, startNewGame} from "./functions.js";
 
 
 function openRulesPopup() {
@@ -7,5 +7,7 @@ function openRulesPopup() {
 }
 
 const startGame = document.getElementById('start');
+
+getUser().then(username => document.getElementById('brand-title').innerHTML = username);
 
 startGame.addEventListener('click', (e) => startNewGame(e));

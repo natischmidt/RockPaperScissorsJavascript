@@ -2,7 +2,7 @@ import {rpsApi} from "./endpoints.js";
 
 export async function getUser() {
     const userToken = rpsApi.getStorage();
-    const username = await rpsApi.getPlayerName(userToken);
+    const username = await rpsApi.getPlayerName(userToken)
     console.log(username);
 
     if (username) {
@@ -11,6 +11,20 @@ export async function getUser() {
 
     //window.location = 'index.html';
 }
+
+export async function setUserInGame() {
+    const userToken = rpsApi.getStorage();
+    const username = await rpsApi.getPlayerName(userToken)
+        .then(username => document.getElementById('player').innerHTML = username);
+    console.log(username);
+
+    if (username) {
+        return username
+    }
+
+    //window.location = 'index.html';
+}
+
 
 export function startNewGame(){
     const userToken = rpsApi.getStorage();
