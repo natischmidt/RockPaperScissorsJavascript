@@ -50,7 +50,6 @@ export const rpsApi = {
     getListOfOpenGames: () => {
         return fetch('http://localhost:8080/games')
             .then(response => response.json())
-            .then(response => response.username)
             .catch(e => console.log(e))
     },
 

@@ -1,9 +1,13 @@
-import {createList} from "./functions.js";
-import {rpsApi} from "./endpoints.js";
+import {getGameList, getUser} from "./functions.js";
 
-createList();
-const openGames = document.getElementById('gamelist');
+getUser().then(username => document.getElementById('brand-title').innerHTML = username);
 
-openGames.innerHTML = rpsApi.getListOfOpenGames();
+getGameList()
+    .then(game => document.getElementById('gamelist').innerHTML = game)
+    .then(data => console.log(data))
+
+
+
+
 
 

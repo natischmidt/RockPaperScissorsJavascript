@@ -5,11 +5,17 @@ export async function getUser() {
     const username = await rpsApi.getPlayerName(userToken)
     console.log(username);
 
-    if (username) {
+    if (username){
         return username
     }
+}
 
-    //window.location = 'index.html';
+export async function getGameList(){
+    const game = await rpsApi.getListOfOpenGames();
+
+    if(game){
+        return game;
+    }
 }
 
 export async function setUserInGame() {
@@ -29,12 +35,6 @@ export async function setUserInGame() {
 export function startNewGame(){
     const userToken = rpsApi.getStorage();
     rpsApi.createNewGame(userToken);
-}
-
-export function createList(){
-    const gameList = document.getElementById('gamelist');
-    const createListItem = document.createElement('li');
-    gameList.appendChild(createListItem);
 }
 
 export function removeUser() {

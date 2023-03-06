@@ -76,6 +76,8 @@ body {
     flex-direction: row-reverse;
     flex-wrap: wrap;
     margin-top: -70px;
+    color: #ffffff;
+    font-size: 30px;
 }
 
 .score {
@@ -116,15 +118,13 @@ body {
     gap: 1rem;
 }
 
-.scoreboard {
-
-    color: #ffffff;
-    font-size: 24px;
-
-
+#restart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.restart {
+#restart button {
     font-size: 24px;
     padding: 1rem;
 }
