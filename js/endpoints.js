@@ -64,11 +64,11 @@ export const rpsApi = {
     },
 
     joinGame: (gameToken) => {
-        fetch('http://localhost:8080/join/{id}', {
-            method: 'POST',
+        fetch(`http://localhost:8080/join/${gameToken}`, {
             headers: {
-                'token': rpsApi.getStorage(gameToken),
-                'Content-Type': 'application/json'},
+                'token': rpsApi.getStorage(),
+                'Content-Type': 'application/json'
+            },
         })
             .then(response => console.log(response.text()))
     },
