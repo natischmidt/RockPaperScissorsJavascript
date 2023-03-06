@@ -18,20 +18,6 @@ export async function getGameList(){
     }
 }
 
-export async function setUserInGame() {
-    const userToken = rpsApi.getStorage();
-    const username = await rpsApi.getPlayerName(userToken)
-        .then(username => document.getElementById('player').innerHTML = username);
-    console.log(username);
-
-    if (username) {
-        return username
-    }
-
-    //window.location = 'index.html';
-}
-
-
 export function startNewGame(){
     const userToken = rpsApi.getStorage();
     rpsApi.createNewGame(userToken);

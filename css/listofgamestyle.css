@@ -69,3 +69,17 @@ h3 {
     align-items: center;
     justify-content: center;
 }
+
+button {
+    padding: 1rem;
+    font-family: "Franklin Gothic Medium";
+    font-size: 1.5rem;
+}
+
+#gamelist a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 200px;
+    font-size: 24px;
+}
