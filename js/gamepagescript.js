@@ -1,8 +1,15 @@
-import {clearChildren, computerMove, createMove, getUser, scoreboardPvp} from "./functions.js";
+import {clearChildren, computerMove, createMove, getOpponent, getUser, scoreboardPvp, getGameInfo} from "./functions.js";
 
 
 const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+const refreshButton = document.getElementById('refresh');
+
+refreshButton.addEventListener('click', async () => {
+    const response = await getGameInfo();
+    console.log(response);
+})
 
 
 toggleButton.addEventListener('click', () => {
@@ -12,7 +19,7 @@ toggleButton.addEventListener('click', () => {
 getUser().then(username => document.getElementById('brand-title').innerHTML = username);
 
 getUser().then(username => document.getElementById('player').innerHTML = username + ':');
-
+getOpponent().then(username => document.getElementById('opponent').innerHTML = username + ':');
 
 const player = document.getElementById('player');
 const opponent = document.getElementById('opponent');

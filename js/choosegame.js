@@ -1,5 +1,5 @@
-import {getUser, startNewGame} from "./functions.js";
-
+import { getUser } from "./functions.js";
+import { rpsApi } from "./endpoints.js";
 
 function openRulesPopup() {
     const popup = document.getElementById('myPopup');
@@ -8,6 +8,13 @@ function openRulesPopup() {
 
 const startGame = document.getElementById('start');
 
-getUser().then(username => document.getElementById('brand-title').innerHTML = username);
+async function startNewGame() {
+    const userToken = rpsApi.getTokenFromStorage();
+    const { gamestatusid } = await rpsApi.createNewGame(userToken);
+    rpsApi.setGameIdStorage(gamestatusid);
+    window.location = 'game.html';
+}
 
-startGame.addEventListener('click', (e) => startNewGame(e));
+startGame.addEventListener('click', () => startNewGame())
+
+getUser().then(username => document.getElementById('brand-title').innerHTML = username);

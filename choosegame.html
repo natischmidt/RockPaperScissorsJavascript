@@ -1,56 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
-    <link rel="stylesheet" href="css/choosegame.css">
-    <script defer src="js/choosegame.js" type="module"></script>
-    <script defer src="js/endpoints.js" type="module"></script>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Title</title>
+  <link rel="stylesheet" href="css/choosegame.css">
+  <script defer src="js/choosegame.js" type="module"></script>
+  <script defer src="js/endpoints.js" type="module"></script>
 </head>
 
 <body>
-<nav class="navbar">
+  <nav class="navbar">
     <div id="brand-title" class="brandtitle"> <strong></strong>
     </div>
     <a href="#" class="toggle-button">
-        <span class="bar"></span>
-        <span class="bar"></span>
-        <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
     </a>
-  <div class="navbar-links">
-    <ul>
-      <li>
-        <a href="homepage.html">Home</a>
-      </li>
-      <li>
-        <a href="buttongame.html">Other Games</a>
-      </li>
-      <li>
-        <a href="https://leekspin.com/" target="_blank">Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+    <div class="navbar-links">
+      <ul>
+        <li>
+          <a href="homepage.html">Home</a>
+        </li>
+        <li>
+          <a href="buttongame.html">Other Games</a>
+        </li>
+        <li>
+          <a href="https://leekspin.com/" target="_blank">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<div class="container">
+  <div class="container">
     <div class="play-buttons">
-        <a href="game.html"><button id="start" class="pvp" onclick="startNewGame()">Player vs Player</button></a>
-        <a href="computer.html"><button class="pve">Player vs Computer</button></a>
+      <button id="start" class="pvp">Player vs Player</button>
+      <a href="computer.html"><button class="pve">Player vs Computer</button></a>
     </div>
     <div class="popup" onclick="openRulesPopup()">
-        <button class="rules" >Rules</button>
-        <span class="popuptext" id="myPopup">
-            <p>The rules of Rock Paper Scissor are simple.</p>
-            <p>Rock beats Scissor, Paper beats Rock and Scissor beats Paper.</p>
-            <p>Equal move results in a draw and neither player gets a point.</p>
-            <p>The game is finished when one player gets three wins.</p>
-            <p>Got it? </p>
-            <p class="close-text">Press <strong><em>here</em></strong> to close!</p>
-        </span>
+      <button class="rules">Rules</button>
+      <span class="popuptext" id="myPopup">
+        <p>The rules of Rock Paper Scissor are simple.</p>
+        <p>Rock beats Scissor, Paper beats Rock and Scissor beats Paper.</p>
+        <p>Equal move results in a draw and neither player gets a point.</p>
+        <p>The game is finished when one player gets three wins.</p>
+        <p>Got it? </p>
+        <p class="close-text">Press <strong><em>here</em></strong> to close!</p>
+      </span>
     </div>
-</div>
+  </div>
 
 </body>
+
 </html>

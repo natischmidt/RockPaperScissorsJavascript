@@ -1,13 +1,14 @@
 export const rpsApi = {
-    setStorage: (token) => sessionStorage.setItem('token', token),
-    getStorage: () => sessionStorage.getItem('token'),
+    setToken: (token) => sessionStorage.setItem('token', token),
+    getTokenFromStorage: () => sessionStorage.getItem('token'),
     setGameIdStorage: (gameID) => sessionStorage.setItem('gameId', gameID),
+    getGameId: () => sessionStorage.getItem('gameId'),
 
     getToken: () => {
-        fetch('http://localhost:8080/auth/token')
+        return fetch('http://localhost:8080/auth/token')
             .then(response => response.json()
             )
-            .then(response => rpsApi.setStorage(response))
+            .then(response => rpsApi.setToken(response))
             .then(text => console.log(text))
     },
 
@@ -16,67 +17,69 @@ export const rpsApi = {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'token': sessionStorage.getItem('token')
+                'token': rpsApi.getTokenFromStorage()
             },
-            body: JSON.stringify({username: name})
+            body: JSON.stringify({ username: name })
         })
             .then(response => response.json())
             .catch(e => console.log(e));
     },
 
-    getPlayerName:(token) => {
-         return fetch('http://localhost:8080/user/username', {
+    getPlayerName: (token) => {
+        return fetch('http://localhost:8080/user/username', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
-                'token': rpsApi.getStorage('token')
+                'token': rpsApi.getTokenFromStorage()
             },
         })
-             .then(response => response.json())
-             .then(response => response.username)
-             .catch(e => console.log(e))
+            .then(response => response.json())
+            .then(response => {
+                console.log('getPlayerName', response);
+                return response.username;
+            })
+            .catch(e => console.log(e))
     },
 
     createNewGame: (token) => {
-       fetch('http://localhost:8080/start', {
+        return fetch('http://localhost:8080/start', {
             method: 'POST',
             headers: {
-                'token': rpsApi.getStorage('token'),
-                'Content-Type': 'application/json'},
-        })
-            .then(response => response.json())
-            .catch(e => console.log(e))
+                'token': rpsApi.getTokenFromStorage(),
+                'Content-Type': 'application/json'
+            },
+        }).then(response => response.json()).catch(e => console.log(e))
     },
 
     getListOfOpenGames: () => {
         return fetch('http://localhost:8080/games')
-            .then(response => response.json())
+            .then(response => {
+                console.log('getListOfOpenGames', response);
+                return response.json()
+            })
             .catch(e => console.log(e))
     },
 
     getGameInfoFromGame: (gameToken) => {
-        fetch('http://localhost:8080/games/{id}', {
+        return fetch(`http://localhost:8080/games/${gameToken}`, {
             method: 'GET',
             headers: {
-                'token': rpsApi.getStorage(gameToken),
-                'Content-Type': 'application/json'},
-        })
-            .then(response => console.log(response.text()))
+                'token': rpsApi.getTokenFromStorage(),
+                'Content-Type': 'application/json'
+            },
+        }).then(response => response.json())
     },
 
     joinGame: (gameToken) => {
-        fetch(`http://localhost:8080/join/${gameToken}`, {
+        return fetch(`http://localhost:8080/join/${gameToken}`, {
             headers: {
-                'token': rpsApi.getStorage(),
+                'token': rpsApi.getTokenFromStorage(),
                 'Content-Type': 'application/json'
             },
-        })
-            .then(response => console.log(response.text()))
+        }).then(response => console.log(response.text()))
     },
-
-
 };
 
-if(sessionStorage.getItem('token') == null){
+if (sessionStorage.getItem('token') == null) {
     rpsApi.getToken();
 }

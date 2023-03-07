@@ -4,7 +4,6 @@ const loginButton = document.getElementById('loginbutton');
 
 const setUsernameOnToken = async (event) => {
     /*event.preventDefault();*/
-    console.log('Bajs')
     const name = document.getElementById('email').value;
     const password = document.getElementById('password').value;
     if(name && password) {
