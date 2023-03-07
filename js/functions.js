@@ -1,5 +1,7 @@
 import {rpsApi} from "./endpoints.js";
 
+
+
 export async function getUser() {
     const userToken = rpsApi.getStorage();
     const username = await rpsApi.getPlayerName(userToken)
@@ -10,6 +12,9 @@ export async function getUser() {
     }
 }
 
+export async function joinGame(gameID) {
+    rpsApi.joinGame(gameID);
+}
 export async function getGameList(){
     const game = await rpsApi.getListOfOpenGames();
 

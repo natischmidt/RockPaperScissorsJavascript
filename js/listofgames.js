@@ -1,4 +1,4 @@
-import {getGameList, getUser} from "./functions.js";
+import {getGameList, getUser, joinGame} from "./functions.js";
 import {rpsApi} from "./endpoints.js";
 
 getUser().then(username => document.getElementById('brand-title').innerHTML = username);
@@ -13,8 +13,15 @@ getGameList()
             const list = document.querySelector('#gamelist')
             const a = document.createElement('a');
             a.append(`${data[key].player1.username} -> ${data[key].gameId}`);
+
+
+
             a.onclick = function() {
                 joinGame(data[key].gameId);
+                rpsApi.setGameIdStorage(data[key].gameId);
+
+
+                window.location = `game.html`
             }
             list.appendChild(a);
         }
@@ -23,8 +30,6 @@ getGameList()
 
 
 
-function joinGame(spelID) {
-    rpsApi.joinGame(spelID);
-}
+
 
 

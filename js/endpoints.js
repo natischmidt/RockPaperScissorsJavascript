@@ -1,6 +1,7 @@
 export const rpsApi = {
     setStorage: (token) => sessionStorage.setItem('token', token),
     getStorage: () => sessionStorage.getItem('token'),
+    setGameIdStorage: (gameID) => sessionStorage.setItem('gameId', gameID),
 
     getToken: () => {
         fetch('http://localhost:8080/auth/token')
@@ -37,7 +38,7 @@ export const rpsApi = {
     },
 
     createNewGame: (token) => {
-        fetch('http://localhost:8080/start', {
+       fetch('http://localhost:8080/start', {
             method: 'POST',
             headers: {
                 'token': rpsApi.getStorage('token'),

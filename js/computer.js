@@ -87,10 +87,6 @@ rock.addEventListener("click", () => {
             })
         }
 
-        // winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser()
-        //    .then(username =>  username + ' wins!') : 'Computer wins!';
-       // restart.innerHTML = 'Restart game';
-       // document.getElementById('scoreboard').appendChild(winner);
        document.getElementById('restart').appendChild(restart);
 
         restart.addEventListener('click', () =>  {
