@@ -19,7 +19,7 @@ toggleButton.addEventListener('click', () => {
 
 getUser().then(username => document.getElementById('brand-title').innerHTML = username);
 
-getUser().then(username => document.getElementById('player').innerHTML = username + ':');
+let user = getUser().then(username => document.getElementById('player').innerHTML = username + ':');
 getOpponent().then(username => document.getElementById('opponent').innerHTML = username + ':');
 
 const player = document.getElementById('player');
@@ -77,19 +77,31 @@ rock.addEventListener("click", () => {
     opponent.appendChild(createMove(opponentMove));
 
     if(totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS){
-        const winner = document.createElement('h2');
         const restart = document.createElement('button');
 
-        winner.innerHTML = totalPlayer === MAX_NUMBER_OF_WINS ? getUser() + ' wins!' : 'HämtaUserPls wins!';
-        restart.innerHTML = 'Restart game';
-        document.getElementById('scoreboard').appendChild(winner);
-        document.getElementById('restartGamePVP').appendChild(restart);
+        if(totalPlayer === MAX_NUMBER_OF_WINS){
+            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + ' wins');
+
+            restart.innerHTML = 'Restart game';
+            document.getElementById('restart').appendChild(restart);
+            restart.addEventListener('click', () =>  {
+                window.location = 'computer.html';
+            })
+        } else if(totalOpponent === MAX_NUMBER_OF_WINS) {
+            document.getElementById('scoreboard').innerHTML = 'Computer wins!';
+            restart.innerHTML = 'Restart game';
+            document.getElementById('restart').appendChild(restart);
+            restart.addEventListener('click', () =>  {
+                window.location = 'computer.html';
+            })
+        }
+
+        document.getElementById('restart').appendChild(restart);
 
         restart.addEventListener('click', () =>  {
-            window.location = 'game.html';
+            window.location = 'computer.html';
         })
     }
-
     scoreboardPvp(totalPlayer, totalOpponent);
 })
 
