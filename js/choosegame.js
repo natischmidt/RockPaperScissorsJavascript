@@ -1,11 +1,6 @@
 import { getUser } from "./functions.js";
 import { rpsApi } from "./endpoints.js";
 
-function openRulesPopup() {
-    const popup = document.getElementById('myPopup');
-    popup.classList.toggle("show");
-}
-
 const startGame = document.getElementById('start');
 
 async function startNewGame() {

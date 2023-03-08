@@ -65,6 +65,8 @@ body {
 }
 
 .rules {
+    align-items: center;
+    justify-content: center;
     padding: 20px;
     border-radius: 5px;
     background-color: lightgray;
@@ -73,7 +75,9 @@ body {
 
 .popup {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
 }
 
@@ -84,11 +88,11 @@ body {
     color: #fff;
     text-align: center;
     border-radius: 6px;
-    padding: 8px 0;
+    padding: 10px 20px;
     position: absolute;
     z-index: 1;
-    bottom: 125%;
-    left: 50%;
+    bottom: 0%;
+    left: 400%;
     margin-left: -80px;
 }
 
@@ -100,7 +104,7 @@ body {
     margin-left: -5px;
     border-width: 5px;
     border-style: solid;
-    border-color: #555 transparent transparent transparent;
+    border-color: transparent transparent transparent transparent;
 
 }
 .popup .show {

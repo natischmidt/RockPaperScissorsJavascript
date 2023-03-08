@@ -12,6 +12,11 @@ refreshButton.addEventListener('click', async () => {
     location.reload();
 })
 
+/*
+WIP-todo
+Skapa en timer för spelet och om ingen gör nåt slumpas ett move fram.
+FIXA rules knappen. Dont kill yourself while trying.
+ */
 
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
