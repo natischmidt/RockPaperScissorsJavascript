@@ -14,6 +14,7 @@ export async function getGameInfo() {
     const gameToken = rpsApi.getGameId();
     const gameInfo = await rpsApi.getGameInfoFromGame(gameToken);
 
+
     console.log(gameToken);
     return gameInfo;
 }
@@ -39,7 +40,7 @@ export async function getOpponent() {
     const myToken = rpsApi.getTokenFromStorage();
 
     console.log('HEJ', gameInfo);
-    if (!gameInfo.player1 && !gameInfo.player2) {
+    if (!gameInfo.player1 || !gameInfo.player2) {
         return 'Vacant!'
     }
 
@@ -51,7 +52,8 @@ export async function getOpponent() {
 }
 
 export async function joinGame(gameID) {
-    rpsApi.joinGame(gameID);
+    rpsApi.joinGame(gameID)
+
 }
 
 export async function getGameList() {

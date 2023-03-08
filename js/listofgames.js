@@ -23,7 +23,6 @@ getGameList()
             }
             list.appendChild(a);
         }
-        // FIXA SÅ ATT DEN FLYTTAR DIG SOM JOINAR TILL SPEL SIDAN OCH SKAPA FUCKING KNAPP
     })
 
 

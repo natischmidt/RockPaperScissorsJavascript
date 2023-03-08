@@ -9,6 +9,7 @@ const refreshButton = document.getElementById('refresh');
 refreshButton.addEventListener('click', async () => {
     const response = await getGameInfo();
     console.log(response);
+    location.reload();
 })
 
 
