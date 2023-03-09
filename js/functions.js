@@ -38,11 +38,23 @@ export async function getGameInfo() {
 }
  */
 
-async function refresh() {
-    await getGameInfo();
-    setTimeout(refresh, 5000);
-    location.reload();
+
+
+function waitingForMove() {
+    clearInterval(startInteval);
+    let timer = setInterval(() => {
+        getGameInfo()
+            .then(game => {
+                if (game.playerMove !== null && game.opponentMove !== null) {
+                    checkResult();
+
+                    clearInterval(timer);
+                }
+            })
+            .catch(e => console.log(e));
+    }, 1000)
 }
+
 
 export async function getOpponent() {
     const gameInfo = await getGameInfo();
@@ -56,10 +68,10 @@ export async function getOpponent() {
     }
 
     if (gameInfo.player1.userId === myToken) {
-        clearTimeout(refresh);
+        clearInterval(startInterval);
         return gameInfo.player2.username;
     } else {
-        clearTimeout(refresh);
+        clearInterval(startInterval);
         return gameInfo.player1.username;
     }
 }
