@@ -80,28 +80,29 @@ export const rpsApi = {
     },
 
 
-    gameInfo : (gameId)  =>{
+    gameInfo: (gameId) => {
         const res = fetch(`http://localhost:8080/games/result/${gameId}`, {
             headers: {
                 'Content-Type': 'application-json',
-                token: rpsApi.getToken()
+                token: rpsApi.getTokenFromStorage()
             }
         });
         let response = res.json();
         return rpsApi.getGameId(gameId);
     },
-    makeMove : (move) => {
-         return fetch(`http://localhost:8080/games/move/${move}`, {
+    makeMove: (move) => {
+        return fetch(`http://localhost:8080/games/move/${move}`, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application-json',
+                'Content-Type': 'application/json',
                 token: rpsApi.getTokenFromStorage()
             },
-            body: JSON.stringify({playerMove : move})
+            body: JSON.stringify({ gamestatusid: rpsApi.getGameId() })
         })
             .then(response => response.json())
             .catch(e => console.log(e));
-    }}
+    }
+}
 
 
 

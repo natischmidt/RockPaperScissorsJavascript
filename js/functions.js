@@ -1,4 +1,4 @@
-import {rpsApi} from "./endpoints.js";
+import { rpsApi } from "./endpoints.js";
 
 export async function getUser() {
     const userToken = rpsApi.getTokenFromStorage();
@@ -39,7 +39,7 @@ export async function getGameInfo() {
 
 
  */
-let startInterval = setInterval(() => {
+/* let startInterval = setInterval(() => {
     const gameInfo = getGameInfo();
     if (gameInfo.playerOne !== null && gameInfo.playerTwo !== null) {
         getUser().then(username => document.getElementById('player').innerHTML = username + ':');
@@ -67,27 +67,15 @@ export function waitingForMove() {
             })
             .catch(e => console.log(e));
     }, 1000)
-}
+} */
 
 
-export async function getOpponent() {
+export async function getPlayerNames() {
     const gameInfo = await getGameInfo();
     const myToken = rpsApi.getTokenFromStorage();
 
 
-    console.log('HEJ', gameInfo);
-    if (!gameInfo.player1 || !gameInfo.player2) {
-        setTimeout(startInterval, 5000);
-        return 'Waiting for other player...'
-    }
-
-    if (gameInfo.player1.userId === myToken) {
-        clearInterval(startInterval);
-        return gameInfo.player2.username;
-    } else {
-        clearInterval(startInterval);
-        return gameInfo.player1.username;
-    }
+    return ({ player1Name: gameInfo?.player1?.username, player2Name: gameInfo?.player2?.username ?? "waiting for opponent" })
 }
 
 export async function joinGame(gameID) {
@@ -115,12 +103,12 @@ export function computerMove() {
 
 export function createMove(move) {
     switch (move) {
-        case 'Rock':
+        case 'rock':
             const rockimage = document.createElement('img');
             rockimage.src = 'img/rock-img.png';
             rockimage.alt = 'picture of rock';
             return rockimage;
-        case 'Scissor':
+        case 'scissors':
             const scissorimage = document.createElement('img');
             scissorimage.src = 'img/scissor-img.png';
             scissorimage.alt = 'picture of scissor';
@@ -160,11 +148,6 @@ export function scoreboard(totalPlayer, totalOpponent) {
     } else {
         document.getElementById('computer-score').innerHTML = 'Computer score: 0';
     }
-}
-
-
-function checkResult() {
-
 }
 
 
