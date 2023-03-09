@@ -35,8 +35,18 @@ export async function getGameInfo() {
         "username": "oliveros"
     },
     "opponentMove": "ROCK"
-}
+    }
+
+
  */
+let startInterval = setInterval(() => {
+    const gameInfo = getGameInfo();
+    if (gameInfo.playerOne !== null && gameInfo.playerTwo !== null) {
+        getUser().then(username => document.getElementById('player').innerHTML = username + ':');
+        getOpponent().then(username => document.getElementById('opponent').innerHTML = username + ':');
+        waitingForMove(); // <-- if (har spelare 1 gjort move && har spelare 2 move
+    }
+}, 5000)
 
 
 
@@ -63,7 +73,7 @@ export async function getOpponent() {
 
     console.log('HEJ', gameInfo);
     if (!gameInfo.player1 || !gameInfo.player2) {
-        setTimeout(refresh, 5000);
+        setTimeout(startInterval, 5000);
         return 'Waiting for other player...'
     }
 
@@ -170,5 +180,8 @@ export function scoreboardPvp(totalPlayer, totalOpponent) {
     }
 }
 
+function checkResult() {
+
+}
 
 
