@@ -3,10 +3,11 @@ let player2score = 0;
 let moves = 0;
 
 
-//WIP
-function refreshGame() {
-    setInterval(refreshGameInfo, 3000);
-}
+//wip
+
+// function refreshGame() {
+//     setInterval(refreshGameInfo, 3000);
+// }
 
 function refreshGameInfo() {
     rpsApi.gameInfo(rpsApi.getGameId())
