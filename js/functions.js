@@ -48,7 +48,41 @@ let startInterval = setInterval(() => {
     }
 }, 5000)
 
+function checkpvpResult(playerMove, opponentMove){
 
+    if(playerMove === opponentMove){
+        console.log('Draw');
+        return;
+    }
+    if(playerMove === 'Rock'){
+        if(opponentMove === 'Scissor'){
+            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+        }
+        if(opponentMove === 'Paper'){
+            getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+        }
+    }
+    if(playerMove === 'Scissor'){
+        if(opponentMove === 'Rock'){
+            getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+
+        }
+        if(opponentMove === 'Paper'){
+            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+        }
+    }
+    if(playerMove === 'Paper'){
+        if(opponentMove === 'Rock'){
+            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+
+        }
+        if(opponentMove === 'Scissor'){
+            getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+
+        }
+    }
+    
+}
 
 function waitingForMove() {
     clearInterval(startInteval);
@@ -56,7 +90,7 @@ function waitingForMove() {
         getGameInfo()
             .then(game => {
                 if (game.playerMove !== null && game.opponentMove !== null) {
-                    checkResult();
+                    checkpvpResult();
 
                     clearInterval(timer);
                 }

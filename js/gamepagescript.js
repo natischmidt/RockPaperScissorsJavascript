@@ -59,48 +59,42 @@ let totalOpponent = 0;
 
 
 if (!getGameInfo().playerMove && !getGameInfo().opponentMove) {
-    checkResult(getGameInfo.playerMove,getGameInfo.opponentMove)
+    checkpvpResult(getGameInfo.playerMove,getGameInfo.opponentMove)
 }
 
-function checkResult(playerMove, opponentMove){
-    if(playerMove === opponentMove){
-        console.log('Draw');
-        return;
-    }
-    if(playerMove === 'Rock'){
-        if(opponentMove === 'Scissor'){
-            totalPlayer += 1;
-        }
-        if(opponentMove === 'Paper'){
-            totalOpponent += 1;
-        }
-    }
-    if(playerMove === 'Scissor'){
-        if(opponentMove === 'Rock'){
-            totalOpponent += 1;
-        }
-        if(opponentMove === 'Paper'){
-            totalPlayer += 1;
-        }
-    }
-    if(playerMove === 'Paper'){
-        if(opponentMove === 'Rock'){
-            totalPlayer += 1;
-        }
-        if(opponentMove === 'Scissor'){
-            totalOpponent += 1;
-        }
-    }
-}
+// function checkpvpResult(playerMove, opponentMove){
+//     if(playerMove === opponentMove){
+//         console.log('Draw');
+//         return;
+//     }
+//     if(playerMove === 'Rock'){
+//         if(opponentMove === 'Scissor'){
+//             totalPlayer += 1;
+//         }
+//         if(opponentMove === 'Paper'){
+//             totalOpponent += 1;
+//         }
+//     }
+//     if(playerMove === 'Scissor'){
+//         if(opponentMove === 'Rock'){
+//             totalOpponent += 1;
+//         }
+//         if(opponentMove === 'Paper'){
+//             totalPlayer += 1;
+//         }
+//     }
+//     if(playerMove === 'Paper'){
+//         if(opponentMove === 'Rock'){
+//             totalPlayer += 1;
+//         }
+//         if(opponentMove === 'Scissor'){
+//             totalOpponent += 1;
+//         }
+//     }
+// }
 
 
 rock.addEventListener("click", () => {
-    if(totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS){
-        return
-    }
-
-    clearChildren('player');
-    clearChildren('opponent');
 
     const opponentMove = computerMove();
     checkResult('Rock', opponentMove);
