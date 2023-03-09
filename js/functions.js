@@ -1,4 +1,4 @@
-import { rpsApi } from "./endpoints.js";
+import {rpsApi} from "./endpoints.js";
 
 export async function getUser() {
     const userToken = rpsApi.getTokenFromStorage();
@@ -20,6 +20,8 @@ export async function getGameInfo() {
 }
 
 /*
+
+
     {
     "gamestatusid": "dc6a034f-73b1-4439-bd97-6b61a8756317",
     "playerOne": {
@@ -35,18 +37,29 @@ export async function getGameInfo() {
     "opponentMove": "ROCK"
 }
  */
+
+async function refresh() {
+    await getGameInfo();
+    setTimeout(refresh, 5000);
+    location.reload();
+}
+
 export async function getOpponent() {
     const gameInfo = await getGameInfo();
     const myToken = rpsApi.getTokenFromStorage();
 
+
     console.log('HEJ', gameInfo);
     if (!gameInfo.player1 || !gameInfo.player2) {
-        return 'Vacant!'
+        setTimeout(refresh, 5000);
+        return 'Waiting for other player...'
     }
 
     if (gameInfo.player1.userId === myToken) {
+        clearTimeout(refresh);
         return gameInfo.player2.username;
     } else {
+        clearTimeout(refresh);
         return gameInfo.player1.username;
     }
 }

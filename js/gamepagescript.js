@@ -13,6 +13,9 @@ refreshButton.addEventListener('click', async () => {
 })
 
 
+
+
+
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
