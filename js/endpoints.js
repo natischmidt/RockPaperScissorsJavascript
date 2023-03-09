@@ -78,7 +78,21 @@ export const rpsApi = {
             },
         }).then(response => console.log(response.text()))
     },
+
+
+    gameInfo(gameId) {
+        const res = fetch(`http://localhost:8080/games/result/${gameId}`, {
+            headers: {
+                'Content-Type': 'application-json',
+                token: rpsApi.getToken()
+            }
+        });
+        let response = res.json();
+        return rpsApi.getGameId(gameId);
+    }
 };
+
+
 
 if (sessionStorage.getItem('token') == null) {
     rpsApi.getToken();
