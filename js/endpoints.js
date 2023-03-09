@@ -80,7 +80,7 @@ export const rpsApi = {
     },
 
 
-    gameInfo(gameId) {
+    gameInfo : (gameId)  =>{
         const res = fetch(`http://localhost:8080/games/result/${gameId}`, {
             headers: {
                 'Content-Type': 'application-json',
