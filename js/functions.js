@@ -48,49 +48,19 @@ let startInterval = setInterval(() => {
     }
 }, 5000)
 
-function checkpvpResult(playerMove, opponentMove){
 
-    if(playerMove === opponentMove){
-        console.log('Draw');
-        return;
-    }
-    if(playerMove === 'Rock'){
-        if(opponentMove === 'Scissor'){
-            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
-        }
-        if(opponentMove === 'Paper'){
-            getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
-        }
-    }
-    if(playerMove === 'Scissor'){
-        if(opponentMove === 'Rock'){
-            getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
 
-        }
-        if(opponentMove === 'Paper'){
-            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
-        }
-    }
-    if(playerMove === 'Paper'){
-        if(opponentMove === 'Rock'){
-            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
-
-        }
-        if(opponentMove === 'Scissor'){
-            getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
-
-        }
-    }
-    
-}
-
-function waitingForMove() {
+export function waitingForMove() {
     clearInterval(startInteval);
     let timer = setInterval(() => {
         getGameInfo()
             .then(game => {
                 if (game.playerMove !== null && game.opponentMove !== null) {
-                    checkpvpResult();
+
+
+
+
+                    checkPvpResult();
 
                     clearInterval(timer);
                 }
@@ -192,27 +162,6 @@ export function scoreboard(totalPlayer, totalOpponent) {
     }
 }
 
-export function scoreboardPvp(totalPlayer, totalOpponent) {
-    if (totalPlayer === 1) {
-        getUser().then(username => document.getElementById('player-score').innerHTML = username + ' score: 1');
-    } else if (totalPlayer === 2) {
-        getUser().then(username => document.getElementById('player-score').innerHTML = username + ' score: 2');
-    } else if (totalPlayer === 3) {
-        getUser().then(username => document.getElementById('player-score').innerHTML = username + ' score: 3');
-    } else {
-        getUser().then(username => document.getElementById('player-score').innerHTML = username + ' score: 0');
-    }
-
-    if (totalOpponent === 1) {
-        getOpponent().then(username => document.getElementById('opponent-score').innerHTML = username + ' score: 1');
-    } else if (totalOpponent === 2) {
-        getOpponent().then(username => document.getElementById('opponent-score').innerHTML = username + ' score: 2');
-    } else if (totalOpponent === 3) {
-        getOpponent().then(username => document.getElementById('opponent-score').innerHTML = username + ' score: 3');
-    } else {
-        getOpponent().then(username => document.getElementById('opponent-score').innerHTML = username + ' score: 0');
-    }
-}
 
 function checkResult() {
 

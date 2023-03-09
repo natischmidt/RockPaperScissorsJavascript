@@ -89,8 +89,19 @@ export const rpsApi = {
         });
         let response = res.json();
         return rpsApi.getGameId(gameId);
-    }
-};
+    },
+    makeMove : (move) => {
+         return fetch(`http://localhost:8080/games/move/${move}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application-json',
+                token: rpsApi.getTokenFromStorage()
+            },
+            body: JSON.stringify({playerMove : move})
+        })
+            .then(response => response.json())
+            .catch(e => console.log(e));
+    }}
 
 
 
