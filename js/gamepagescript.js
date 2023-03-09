@@ -57,6 +57,11 @@ const MAX_NUMBER_OF_WINS = 3;
 let totalPlayer = 0;
 let totalOpponent = 0;
 
+
+if (!getGameInfo().playerMove && !getGameInfo().opponentMove) {
+    checkResult(getGameInfo.playerMove,getGameInfo.opponentMove)
+}
+
 function checkResult(playerMove, opponentMove){
     if(playerMove === opponentMove){
         console.log('Draw');
