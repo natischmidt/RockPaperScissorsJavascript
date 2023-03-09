@@ -12,10 +12,20 @@ refreshButton.addEventListener('click', async () => {
     location.reload();
 })
 
+
+
+
 /*
+
+
 WIP-todo
-Skapa en timer för spelet och om ingen gör nåt slumpas ett move fram.
-FIXA rules knappen. Dont kill yourself while trying.
+ Skapa en timer för spelet och om ingen gör nåt slumpas ett move fram,
+
+ Skapa loop som kollar när du gör move om motståndaren gör move annars - waiting for opponent to make move,
+ om båda gjort move - checkgameresult
+
+
+
  */
 
 
