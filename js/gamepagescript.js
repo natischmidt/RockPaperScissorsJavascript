@@ -78,7 +78,7 @@ export function checkPvpResult(playerMove, opponentMove) {
     }
     if (playerMove === 'rock') {
 
-        if (opponentMove === 'scissor') {
+        if (opponentMove === 'scissors') {
 
             getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
         }
@@ -86,7 +86,7 @@ export function checkPvpResult(playerMove, opponentMove) {
             getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
         }
     }
-    if (playerMove === 'scissor') {
+    if (playerMove === 'scissors') {
         if (opponentMove === 'rock') {
             getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
 
@@ -100,7 +100,7 @@ export function checkPvpResult(playerMove, opponentMove) {
             getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
 
         }
-        if (opponentMove === 'scissor') {
+        if (opponentMove === 'scissors') {
             getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
 
         }
