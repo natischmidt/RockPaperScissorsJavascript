@@ -27,8 +27,16 @@ WIP-todo
 
 
  */
+// function refreshGameInfo() {
+//     rpsApi.gameInfo(rpsApi.getGameId())
+//         .then(data => console.log(data));
+// }
 
+//wip
 
+// function refreshGame() {
+//     setInterval(refreshGameInfo, 3000);
+// }
 
 
 toggleButton.addEventListener('click', () => {
