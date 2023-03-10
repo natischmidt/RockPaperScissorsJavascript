@@ -3,6 +3,8 @@ export const rpsApi = {
     getTokenFromStorage: () => sessionStorage.getItem('token'),
     setGameIdStorage: (gameID) => sessionStorage.setItem('gameId', gameID),
     getGameId: () => sessionStorage.getItem('gameId'),
+    setUsername: (username) => sessionStorage.setItem('username', username),
+    getUsername: () => sessionStorage.getItem('username'),
 
     getToken: () => {
         return fetch('http://localhost:8080/auth/token')
@@ -22,6 +24,7 @@ export const rpsApi = {
             body: JSON.stringify({ username: name })
         })
             .then(response => response.json())
+            .then(response => rpsApi.setUsername(response.username))
             .catch(e => console.log(e));
     },
 

@@ -1,7 +1,6 @@
 import {
     clearChildren,
     createMove,
-    getPlayerNames,
     getUser,
     getGameInfo,
 } from "./functions.js";
@@ -71,11 +70,11 @@ const refreshFn = async () => {
     }
 
 
-
+/*
     const { player1Name, player2Name } = await getPlayerNames();
     document.getElementById('player2Name').innerHTML = player2Name + ':'
     document.getElementById('player1Name').innerHTML = player1Name + ':'
-
+*/
     document.getElementById('brand-title').innerHTML = await getUser();
 }
 
@@ -118,9 +117,9 @@ export function checkPvpResult(playerOne, playerTwo, playerMove, opponentMove) {
 
 
     }
-    if (playerMove === 'rock') {
+    if (playerMove === 'ROCK') {
 
-        if (opponentMove === 'scissors') {
+        if (opponentMove === 'SCISSORS') {
 
             result.innerHTML = playerOne + ' wins!';
         }
@@ -158,7 +157,6 @@ export function checkPvpResult(playerOne, playerTwo, playerMove, opponentMove) {
 
 
 }
-
 
 
 rock.addEventListener("click", async () => {

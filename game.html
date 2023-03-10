@@ -5,9 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/gamepage.css">
-    <script defer src="js/gamepagescript.js" type="module"></script>
-    <script defer src="js/functions.js" type="module"></script>
-    <script defer src="js/endpoints.js" type="module"></script>
     <title>Game RPS</title>
 </head>
 <body>
@@ -60,16 +57,18 @@
     </div>
 
     <div class="choices">
-        <button id="rock" class="btn-rock"><img src="img/rock-img.png" alt="picture of closed hand"></button>
+        <div id="rock" class="btn-rock"><img src="img/rock-img.png" alt="picture of closed hand" onclick="choose('rock')"></div>
 
-        <button id="scissor" class="btn-scissor"><img src="img/scissor-img.png" alt="picture of a scissorhand"></button>
+        <div id="scissor" class="btn-scissor"><img src="img/scissor-img.png" alt="picture of a scissorhand" onclick="choose('scissors')"></div>
 
-        <button id="paper" class="btn-paper"><img src="img/paper-img.png" alt="picutre of open palm of hand"></button>
+        <div id="paper" class="btn-paper"><img src="img/paper-img.png" alt="picutre of open palm of hand" onclick="choose('paper')"></div>
     </div>
 
     <button id="refresh">Refresh game</button>
 </div>
 
-
+<script defer src="js/gamepagescript.js" type="module"></script>
+<script defer src="js/functions.js" type="module"></script>
+<script defer src="js/endpoints.js" type="module"></script>
 </body>
 </html>
