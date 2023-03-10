@@ -156,6 +156,7 @@ export function checkPvpResult(playerOne, playerTwo, playerMove, opponentMove) {
 
 
 
+
 }
 
 
@@ -164,12 +165,14 @@ rock.addEventListener("click", async () => {
     await refreshFn();
 
 
+
+
 })
 
 scissor.addEventListener("click", async () => {
     await rpsApi.makeMove('SCISSOR');
     await refreshFn();
-         const closeGame = document.createElement('button');
+
 
 
 })
@@ -177,11 +180,5 @@ scissor.addEventListener("click", async () => {
 paper.addEventListener("click", async () => {
     await rpsApi.makeMove('PAPER');
     await refreshFn();
-    /*     const closeGame = document.createElement('button');
-    
-        closeGame.innerHTML = 'Click to close the game';
-        document.getElementById('restart').appendChild(closeGame);
-        closeGame.addEventListener('click', () => {
-            window.location = 'homepage.html';
-        }) */
+
 })
