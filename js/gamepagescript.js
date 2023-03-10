@@ -9,7 +9,6 @@ import { rpsApi } from "./endpoints.js";
 const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 const gameInfo = getGameInfo();
-const refreshButton = document.getElementById('refresh');
 document.getElementById('brand-title').innerHTML = rpsApi.getUsername();
 
 let startInterval = setInterval(async () => {
@@ -25,9 +24,6 @@ let startInterval = setInterval(async () => {
     });
 }, 500)
 
-
-
-
 export async function waitingForMove() {
      clearInterval(startInterval);
      await refreshFn();
@@ -35,19 +31,14 @@ export async function waitingForMove() {
         getGameInfo()
             .then(game => {
                 if (game.playerMove !== null && game.opponentMove !== null) {
-
-
-
                     refreshFn();
                     checkPvpResult(game.player1.username, game.player2.username, game.playerMove, game.opponentMove);
-
                     clearInterval(timer);
                 }
             })
             .catch(e => console.log(e));
     }, 1000)
 }
-
 
 const refreshFn = async () => {
     const response = await getGameInfo();
@@ -77,10 +68,6 @@ const refreshFn = async () => {
 */
     document.getElementById('brand-title').innerHTML = await getUser();
 }
-
-refreshButton.addEventListener('click', refreshFn)
-
-
 /*
 
 
@@ -97,9 +84,6 @@ WIP-todo
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
-
-
-
 
 const rock = document.getElementById('rock');
 const scissor = document.getElementById('scissor');
@@ -120,7 +104,6 @@ export function checkPvpResult(playerOne, playerTwo, playerMove, opponentMove) {
     if (playerMove === 'ROCK') {
 
         if (opponentMove === 'SCISSORS') {
-
             result.innerHTML = playerOne + ' wins!';
         }
         if (opponentMove === 'PAPER') {
@@ -154,31 +137,23 @@ export function checkPvpResult(playerOne, playerTwo, playerMove, opponentMove) {
          window.location = 'homepage.html';
      })
 
-
-
-
+    rock.classList.toggle('disable');
+    scissor.classList.toggle('disable');
+    paper.classList.toggle('disable');
 }
 
 
 rock.addEventListener("click", async () => {
     await rpsApi.makeMove('ROCK');
     await refreshFn();
-
-
-
-
 })
 
 scissor.addEventListener("click", async () => {
     await rpsApi.makeMove('SCISSOR');
     await refreshFn();
-
-
-
 })
 
 paper.addEventListener("click", async () => {
     await rpsApi.makeMove('PAPER');
     await refreshFn();
-
 })

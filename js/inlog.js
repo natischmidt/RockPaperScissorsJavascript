@@ -5,8 +5,7 @@ const loginButton = document.getElementById('loginbutton');
 const setUsernameOnToken = async (event) => {
     /*event.preventDefault();*/
     const name = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    if(name && password) {
+    if(name) {
         try {
             await rpsApi.setPlayerName(name);
             window.location = 'homepage.html';

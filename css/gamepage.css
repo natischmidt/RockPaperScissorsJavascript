@@ -160,6 +160,8 @@ body {
     background-color: hotpink;
 }
 
+
+
 img {
     width: 150px;
     max-height: 150px;
@@ -171,8 +173,12 @@ img {
     margin-top: 200px;
     padding: 5px;
     background-color: red;
+}
 
-
+.btn-rock.disable,
+.btn-paper.disable,
+.btn-scissor.disable {
+    visibility: hidden;
 }
 
 .btn-rock:hover,
