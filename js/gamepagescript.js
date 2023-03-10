@@ -1,5 +1,4 @@
 import {
-    computerMove,
     clearChildren,
     createMove,
     getPlayerNames,
@@ -12,6 +11,44 @@ const toggleButton = document.getElementsByClassName('toggle-button')[0]
 const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 const gameInfo = getGameInfo();
 const refreshButton = document.getElementById('refresh');
+document.getElementById('brand-title').innerHTML = rpsApi.getUsername();
+
+let startInterval = setInterval(async () => {
+    rpsApi.getGameInfoFromGame(rpsApi.getGameId()).then(game => {
+        document.querySelector("#player2Name").innerHTML = `Waiting for other player...`;
+        if (game.playerOne !== null && game.playerTwo !== null) {
+            console.log(game);
+            document.querySelector("#player1Name").innerHTML = `${game.player1.username}:`;
+            document.querySelector("#player2Name").innerHTML = `${game.player2.username}:`;
+            refreshFn();
+            waitingForMove();
+        }
+    });
+}, 500)
+
+
+
+
+export async function waitingForMove() {
+     clearInterval(startInterval);
+     await refreshFn();
+    let timer = setInterval(  () => {
+        getGameInfo()
+            .then(game => {
+                if (game.playerMove !== null && game.opponentMove !== null) {
+
+
+
+                    refreshFn();
+                    checkPvpResult(game.player1.username, game.player2.username, game.playerMove, game.opponentMove);
+
+                    clearInterval(timer);
+                }
+            })
+            .catch(e => console.log(e));
+    }, 1000)
+}
+
 
 const refreshFn = async () => {
     const response = await getGameInfo();
@@ -62,7 +99,7 @@ toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
-refreshFn()
+
 
 
 const rock = document.getElementById('rock');
@@ -70,41 +107,55 @@ const scissor = document.getElementById('scissor');
 const paper = document.getElementById('paper');
 
 
-export function checkPvpResult(playerMove, opponentMove) {
+export function checkPvpResult(playerOne, playerTwo, playerMove, opponentMove) {
+
+    const result = document.getElementById('player-score');
+
+
 
     if (playerMove === opponentMove) {
-        console.log('Draw');
-        return;
+        result.innerHTML = 'Draw!';
+
+
     }
     if (playerMove === 'rock') {
 
         if (opponentMove === 'scissors') {
 
-            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+            result.innerHTML = playerOne + ' wins!';
         }
-        if (opponentMove === 'paper') {
-            getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
-        }
-    }
-    if (playerMove === 'scissors') {
-        if (opponentMove === 'rock') {
-            getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
-
-        }
-        if (opponentMove === 'paper') {
-            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+        if (opponentMove === 'PAPER') {
+            result.innerHTML = playerTwo + ' wins!';
         }
     }
-    if (playerMove === 'paper') {
-        if (opponentMove === 'rock') {
-            getUser().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+    if (playerMove === 'SCISSORS') {
+        if (opponentMove === 'ROCK') {
+            result.innerHTML = playerTwo + ' wins!';
 
         }
-        if (opponentMove === 'scissors') {
-            getOpponent().then(username => document.getElementById('scoreboard').innerHTML = username + 'wins');
+        if (opponentMove === 'PAPER') {
+            result.innerHTML = playerOne + ' wins!';
+        }
+    }
+    if (playerMove === 'PAPER') {
+        if (opponentMove === 'ROCK') {
+            result.innerHTML = playerOne + ' wins!';
+
+        }
+        if (opponentMove === 'SCISSORS') {
+            result.innerHTML = playerTwo + ' wins!';
 
         }
     }
+    const closeGame = document.createElement('button');
+
+     closeGame.innerHTML = 'Click to close the game';
+     document.getElementById('player-score').appendChild(closeGame);
+     closeGame.addEventListener('click', () => {
+         window.location = 'homepage.html';
+     })
+
+
 
 }
 
@@ -113,25 +164,16 @@ export function checkPvpResult(playerMove, opponentMove) {
 rock.addEventListener("click", async () => {
     await rpsApi.makeMove('ROCK');
     await refreshFn();
-    /*     const closeGame = document.createElement('button');
-    
-        closeGame.innerHTML = 'Click to close the game';
-        document.getElementById('restart').appendChild(closeGame);
-        closeGame.addEventListener('click', () => {
-            window.location = 'homepage.html';
-        }) */
+
+
 })
 
 scissor.addEventListener("click", async () => {
     await rpsApi.makeMove('SCISSOR');
     await refreshFn();
-    /*     const closeGame = document.createElement('button');
-    
-        closeGame.innerHTML = 'Click to close the game';
-        document.getElementById('restart').appendChild(closeGame);
-        closeGame.addEventListener('click', () => {
-            window.location = 'homepage.html';
-        }) */
+         const closeGame = document.createElement('button');
+
+
 })
 
 paper.addEventListener("click", async () => {

@@ -39,36 +39,6 @@ export async function getGameInfo() {
 
 
  */
-/* let startInterval = setInterval(() => {
-    const gameInfo = getGameInfo();
-    if (gameInfo.playerOne !== null && gameInfo.playerTwo !== null) {
-        getUser().then(username => document.getElementById('player').innerHTML = username + ':');
-        getOpponent().then(username => document.getElementById('opponent').innerHTML = username + ':');
-        waitingForMove(); // <-- if (har spelare 1 gjort move && har spelare 2 move
-    }
-}, 5000)
-
-
-
-export function waitingForMove() {
-    clearInterval(startInteval);
-    let timer = setInterval(() => {
-        getGameInfo()
-            .then(game => {
-                if (game.playerMove !== null && game.opponentMove !== null) {
-
-
-
-
-                    checkPvpResult();
-
-                    clearInterval(timer);
-                }
-            })
-            .catch(e => console.log(e));
-    }, 1000)
-} */
-
 
 export async function getPlayerNames() {
     const gameInfo = await getGameInfo();
