@@ -60,26 +60,11 @@ const refreshFn = async () => {
         console.log("children pl2", player2.children)
     }
 
-
-/*
-    const { player1Name, player2Name } = await getPlayerNames();
-    document.getElementById('player2Name').innerHTML = player2Name + ':'
-    document.getElementById('player1Name').innerHTML = player1Name + ':'
-*/
     document.getElementById('brand-title').innerHTML = await getUser();
 }
-/*
-
-
-WIP-todo
- Skapa en timer för spelet och om ingen gör nåt slumpas ett move fram,
-
- Skapa loop som kollar när du gör move om motståndaren gör move annars - waiting for opponent to make move,
- om båda gjort move - checkgameresult
 
 
 
-*/
 
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
@@ -137,15 +122,16 @@ export function checkPvpResult(playerOne, playerTwo, playerMove, opponentMove) {
          window.location = 'homepage.html';
      })
 
-    rock.classList.toggle('disable');
-    scissor.classList.toggle('disable');
-    paper.classList.toggle('disable');
+    // rock.classList.toggle('disable');
+    // scissor.classList.toggle('disable');
+    // paper.classList.toggle('disable');
 }
 
 
 rock.addEventListener("click", async () => {
     await rpsApi.makeMove('ROCK');
     await refreshFn();
+
 })
 
 scissor.addEventListener("click", async () => {

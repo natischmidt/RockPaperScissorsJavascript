@@ -6,8 +6,6 @@ getUser().then(username => document.getElementById('brand-title').innerHTML = us
 getGameList()
 
     .then(data => {
-        // Data returnerar en Array med objekt
-        // Gör en forloop som loopar igenom arrayen
 
         console.log('DATA, getGameList', data);
         for (let key in data) {

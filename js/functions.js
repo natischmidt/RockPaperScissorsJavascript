@@ -1,4 +1,4 @@
-import { rpsApi } from "./endpoints.js";
+import {rpsApi} from "./endpoints.js";
 
 export async function getUser() {
     const userToken = rpsApi.getTokenFromStorage();
@@ -19,34 +19,6 @@ export async function getGameInfo() {
     return gameInfo;
 }
 
-/*
-
-
-    {
-    "gamestatusid": "dc6a034f-73b1-4439-bd97-6b61a8756317",
-    "playerOne": {
-        "userId": "a3197fa4-137b-46ac-ae76-13bcf7f151eb",
-        "username": "alex"
-    },
-    "playerMove": "SCISSORS",
-    "gameStatus": "ACTIVE",
-    "playerTwo": {
-        "userId": "a32c09a3-c2c8-41b4-9d4b-f65e758240fc",
-        "username": "oliveros"
-    },
-    "opponentMove": "ROCK"
-    }
-
-
- */
-
-export async function getPlayerNames() {
-    const gameInfo = await getGameInfo();
-    const myToken = rpsApi.getTokenFromStorage();
-
-
-    return ({ player1Name: gameInfo?.player1?.username, player2Name: gameInfo?.player2?.username ?? "waiting for opponent" })
-}
 
 export async function joinGame(gameID) {
     rpsApi.joinGame(gameID)
