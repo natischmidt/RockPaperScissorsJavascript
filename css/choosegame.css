@@ -105,8 +105,8 @@ body {
     border-width: 5px;
     border-style: solid;
     border-color: transparent transparent transparent transparent;
-
 }
+
 .popup .show {
     visibility: visible;
     -webkit-animation: fadeIn 1s;
@@ -150,4 +150,173 @@ body {
     cursor: pointer;
 }
 
+@media (max-width: 500px){
+    .toggle-button {
+        display: flex;
+    }
 
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    body {
+        background-color: rgba(33, 234, 228, 0.67);
+        background-image: url("../img/retro palm trees.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-blend-mode: hard-light;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .container {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 100px;
+    }
+
+    .popup .popuptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 400%;
+        left: -50%;
+        margin-left: -20px;
+    }
+
+    .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent transparent;
+    }
+
+    .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+    }
+
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
+
+@media (max-width: 800px){
+    body {
+        background-color: rgba(33, 234, 228, 0.67);
+        background-image: url("../img/retro palm trees.jpg");
+        background-position: center;
+        background-blend-mode: hard-light;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 3rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .popup .popuptext {
+        visibility: hidden;
+        width: 200px;
+        background-color: #555;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: -50%;
+        margin-left: -20px;
+    }
+
+    .popup .popuptext::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: transparent transparent transparent transparent;
+    }
+
+    .popup .show {
+        visibility: visible;
+        -webkit-animation: fadeIn 1s;
+        animation: fadeIn 1s;
+    }
+
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+}
