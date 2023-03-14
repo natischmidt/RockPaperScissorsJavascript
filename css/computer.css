@@ -241,5 +241,249 @@ img {
     }
 }
 
+@media (max-width: 650px) {
+
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+
+    }
+
+    .navbar-links li {
+        text-align: center;
+    }
+
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+
+    body {
+        box-sizing: border-box;
+        height: 100vh;
+        background-color: rgba(33, 234, 228, 0.67);
+        background-image: url("../img/retro palm trees.jpg");
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: hard-light;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    #opponent, #player {
+        margin: 1px;
+        font-size: 10px;
+        padding: 5px;
+
+    }
+
+
+    #player img, #opponent img {
+        width: 70px;
+        margin: 0;
+
+    }
+
+    #player, #opponent {
+        width: 40px;
+        margin: 0;
+        padding: 5px;
+
+    }
+
+    .choices img {
+        padding: 0;
+        width: 70px;
+    }
+
+    .choices {
+        margin-top: 15px;
+    }
+
+    .player-opponent{
+        font-size: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-top: 15px;
+
+    }
+
+    /*.playerchoice {*/
+    /*    font-size: 10px;*/
+    /*    padding: 5px;*/
+    /*    color: #ffffff;*/
+    /*}*/
+
+    /*.opchoice {*/
+    /*    !*padding: 10px 10px 150px 10px;*!*/
+    /*    !*margin-left: 20px;*!*/
+    /*    color: #ffffff;*/
+    /*    font-size: 10px;*/
+    /*}*/
+
+    .score {
+        display: flex;
+        flex-direction: row;
+        color: white;
+        font-size: 18px;
+        margin-top: -50px;
+        gap: 1rem;
+        /*margin-left: 50px;*/
+    }
+
+    /*#player-score {*/
+    /*    display: flex;*/
+    /*    align-items: center;*/
+    /*    flex-direction: column;*/
+    /*    color: #FFFFFF;*/
+    /*    padding: 10px 10px 10px 10px;*/
+    /*    font-size: 18px;*/
+
+    /*}*/
+
+
+
+
+
+}
+
+@media (max-width: 800px) {
+    body {
+        height: 100vh;
+        background-color: rgba(33, 234, 228, 0.67);
+        background-image: url("../img/retro palm trees.jpg");
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: hard-light;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 3rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .scoreboard {
+        margin-top: 20px;
+        margin-bottom: -10px;
+    }
+
+    .player-opponent{
+        display: flex;
+        margin-top: 15px;
+
+    }
+
+
+    #player, #opponent {
+        font-size: 30px;
+    }
+
+
+    .playerchoice {
+        padding: 10px 10px 150px 10px;
+        margin-right: -50px;
+        color: #ffffff;
+        font-size: 40px;
+    }
+
+    .opchoice {
+        padding: 10px 10px 150px 10px;
+        margin-left: 20px;
+        color: #ffffff;
+        font-size: 40px;
+    }
+
+    img {
+        width: 150px;
+        max-height: 150px;
+    }
+}
+
+@media (max-width: 1200px) {
+    body {
+        height: 100vh;
+        background-color: rgba(33, 234, 228, 0.67);
+        background-image: url("../img/retro palm trees.jpg");
+        background-position: center;
+        background-size: cover;
+        background-blend-mode: hard-light;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .nav-list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 1rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .scoreboard {
+        margin-top: 20px;
+        margin-bottom: -10px;
+    }
+
+    .player-opponent{
+        display: flex;
+        margin-top: 15px;
+
+    }
+
+    .playerchoice {
+        padding: 10px 10px 150px 10px;
+        margin-right: -50px;
+        color: #ffffff;
+        font-size: 40px;
+    }
+
+    .opchoice {
+        padding: 10px 10px 150px 10px;
+        margin-left: 20px;
+        color: #ffffff;
+        font-size: 40px;
+    }
+
+    img {
+        width: 125px;
+        max-height: 125px;
+    }
+
+    .player-opponent img {
+
+        margin-left: 65px;
+
+    }
+}
+
+
+
+
 
 
