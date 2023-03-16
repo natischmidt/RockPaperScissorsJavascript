@@ -1,7 +1,6 @@
 const evilButton = document.getElementById('evil-button')
 const OFFSET = 100
 
-
 evilButton.addEventListener('click', () => {
     alert('You naughty naughty')
     window.close()
@@ -23,8 +22,6 @@ document.addEventListener('mousemove', (e) => {
             buttonBox.y + verticalOffset / verticalDistanceFrom * 10
         )
     }
-
-
 })
 
 function setButtonPosition(left, top) {
