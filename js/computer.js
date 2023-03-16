@@ -27,27 +27,27 @@ function checkResult(playerMove, opponentMove) {
         console.log('Draw');
         return;
     }
-    if (playerMove === 'Rock') {
-        if (opponentMove === 'Scissor') {
+    if (playerMove === 'rock') {
+        if (opponentMove === 'scissor') {
             totalPlayer += 1;
         }
-        if (opponentMove === 'Paper') {
+        if (opponentMove === 'paper') {
             totalOpponent += 1;
         }
     }
-    if (playerMove === 'Scissor') {
-        if (opponentMove === 'Rock') {
+    if (playerMove === 'scissor') {
+        if (opponentMove === 'rock') {
             totalOpponent += 1;
         }
-        if (opponentMove === 'Paper') {
+        if (opponentMove === 'paper') {
             totalPlayer += 1;
         }
     }
-    if (playerMove === 'Paper') {
-        if (opponentMove === 'Rock') {
+    if (playerMove === 'paper') {
+        if (opponentMove === 'rock') {
             totalPlayer += 1;
         }
-        if (opponentMove === 'Scissor') {
+        if (opponentMove === 'scissor') {
             totalOpponent += 1;
         }
     }
@@ -63,8 +63,8 @@ rock.addEventListener("click", () => {
     clearChildren('opponent');
 
     const opponentMove = computerMove();
-    checkResult('Rock', opponentMove);
-    player.appendChild(createMove('Rock'));
+    checkResult('rock', opponentMove);
+    player.appendChild(createMove('rock'));
     opponent.appendChild(createMove(opponentMove));
 
     if (totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS) {
@@ -107,8 +107,8 @@ scissor.addEventListener("click", () => {
     clearChildren('opponent');
 
     const opponentMove = computerMove();
-    checkResult('Scissor', opponentMove);
-    player.appendChild(createMove('Scissor'));
+    checkResult('scissor', opponentMove);
+    player.appendChild(createMove('scissor'));
     opponent.appendChild(createMove(opponentMove));
 
     if (totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS) {
@@ -144,8 +144,8 @@ paper.addEventListener("click", () => {
     clearChildren('opponent');
 
     const opponentMove = computerMove();
-    checkResult('Paper', opponentMove);
-    player.appendChild(createMove('Paper'));
+    checkResult('paper', opponentMove);
+    player.appendChild(createMove('paper'));
     opponent.appendChild(createMove(opponentMove));
 
     if (totalPlayer === MAX_NUMBER_OF_WINS || totalOpponent === MAX_NUMBER_OF_WINS) {

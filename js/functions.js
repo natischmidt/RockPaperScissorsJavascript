@@ -38,7 +38,7 @@ export function removeUser() {
 }
 
 export function computerMove() {
-    const choices = ['Rock', 'Scissor', 'Paper'];
+    const choices = ['rock', 'scissor', 'paper'];
     const index = Math.floor(Math.random() * 3);
     return choices[index];
 }
@@ -50,7 +50,7 @@ export function createMove(move) {
             rockimage.src = 'img/rock-img.png';
             rockimage.alt = 'picture of rock';
             return rockimage;
-        case 'scissors':
+        case 'scissor':
             const scissorimage = document.createElement('img');
             scissorimage.src = 'img/scissor-img.png';
             scissorimage.alt = 'picture of scissor';
