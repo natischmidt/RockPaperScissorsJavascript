@@ -384,6 +384,13 @@ img {
 
     #restart {
         margin: 3px;
+        padding: 5px;
+    }
+
+    #restart button {
+        margin: 3px;
+        padding: 5px;
+
     }
 
     .nav-list {
@@ -397,7 +404,7 @@ img {
     }
 
     .scoreboard {
-        margin-top: 20px;
+        margin-top: 5px;
         margin-bottom: -10px;
     }
 
@@ -463,6 +470,17 @@ img {
         display: flex;
         margin-top: 15px;
 
+    }
+
+    #restart button {
+        margin: 3px;
+        padding: 5px;
+
+    }
+
+    #restart {
+        margin: 3px;
+        padding: 5px;
     }
 
     .playerchoice {
