@@ -6,6 +6,19 @@ export const rpsApi = {
     setUsername: (username) => sessionStorage.setItem('username', username),
     getUsername: () => sessionStorage.getItem('username'),
 
+    /*    Funktioner för att sätta & hämta UUID i sessionstorage, sätta namn på token, sätta gameId i storage
+        och sätta namn på användare
+    */
+
+
+
+
+
+
+
+    /*
+    Alla fetchanrop till backenden
+    */
     getToken: () => {
         return fetch('http://localhost:8080/auth/token')
             .then(response => response.json()
@@ -21,7 +34,7 @@ export const rpsApi = {
                 'Content-Type': 'application/json',
                 'token': rpsApi.getTokenFromStorage()
             },
-            body: JSON.stringify({ username: name })
+            body: JSON.stringify({username: name})
         })
             .then(response => response.json())
             .then(response => rpsApi.setUsername(response.username))
@@ -100,15 +113,18 @@ export const rpsApi = {
                 'Content-Type': 'application/json',
                 token: rpsApi.getTokenFromStorage()
             },
-            body: JSON.stringify({ gamestatusid: rpsApi.getGameId() })
+            body: JSON.stringify({gamestatusid: rpsApi.getGameId()})
         })
             .then(response => response.json())
             .catch(e => console.log(e));
     }
 }
 
-
+/*
+ Kollar om det finns någon token i sessionstorage annars skapar den ett
+ */
 
 if (sessionStorage.getItem('token') == null) {
     rpsApi.getToken();
 }
+
