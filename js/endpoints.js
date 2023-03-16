@@ -6,7 +6,7 @@ export const rpsApi = {
     setUsername: (username) => sessionStorage.setItem('username', username),
     getUsername: () => sessionStorage.getItem('username'),
 
-    /*    Funktioner för att sätta & hämta UUID i sessionstorage, sätta namn på token, sätta gameId i storage
+    /*    Keyvalues för att sätta & hämta UUID i sessionstorage, sätta namn på token, sätta gameId i storage
         och sätta namn på användare
     */
 
