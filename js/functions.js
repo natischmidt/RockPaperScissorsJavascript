@@ -1,5 +1,8 @@
 import {rpsApi} from "./endpoints.js";
 
+
+
+/* funktion vi använder överallt där vi måste hämta användare */
 export async function getUser() {
     const userToken = rpsApi.getTokenFromStorage();
     const username = await rpsApi.getPlayerName(userToken)
@@ -10,6 +13,8 @@ export async function getUser() {
     }
 }
 
+
+/* funktion vi använder överallt där vi behöver hämta info om spelet  */
 export async function getGameInfo() {
     const gameToken = rpsApi.getGameId();
     const gameInfo = await rpsApi.getGameInfoFromGame(gameToken);
@@ -20,11 +25,15 @@ export async function getGameInfo() {
 }
 
 
+
+/* funktion för att joina ett spel via fetch */
 export async function joinGame(gameID) {
     rpsApi.joinGame(gameID)
 
 }
 
+
+/* funktion för att hämta lista på spel med status OPEN via fetch */
 export async function getGameList() {
     const game = await rpsApi.getListOfOpenGames();
 
@@ -37,12 +46,16 @@ export function removeUser() {
     sessionStorage.removeItem('username');
 }
 
+
+/* funktion som används i spela mot datorn som gör att datorn får ett random move */
 export function computerMove() {
     const choices = ['rock', 'scissor', 'paper'];
     const index = Math.floor(Math.random() * 3);
     return choices[index];
 }
 
+
+/* funktion som vi använder i spela mot datorn och pvp för att göra ett move med switch case */
 export function createMove(move) {
     switch (move) {
         case 'rock':
@@ -63,6 +76,8 @@ export function createMove(move) {
     }
 }
 
+
+/* funktion vi använder för att rensa element i olika scenarion */
 export function clearChildren(elementId) {
     const element = document.getElementById(elementId)
     for (const child of element.children) {
@@ -70,6 +85,8 @@ export function clearChildren(elementId) {
     }
 }
 
+
+/* funktion som används för att skriva ut resultat när man spelar mot datorn */
 export function scoreboard(totalPlayer, totalOpponent) {
     if (totalPlayer === 1) {
         getUser().then(username => document.getElementById('player-score').innerHTML = username + ' score: 1');

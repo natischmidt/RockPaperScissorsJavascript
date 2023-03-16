@@ -11,6 +11,9 @@ const navbarLinks = document.getElementsByClassName('navbar-links')[0]
 const gameInfo = getGameInfo();
 document.getElementById('brand-title').innerHTML = rpsApi.getUsername();
 
+
+/* Första intervallen som när du öppnar ett spel uppdaterar hela tiden tills en motståndare är i spelet */
+
 let startInterval = setInterval(async () => {
     rpsApi.getGameInfoFromGame(rpsApi.getGameId()).then(game => {
         document.querySelector("#player2Name").innerHTML = `Waiting for other player...`;
@@ -23,6 +26,10 @@ let startInterval = setInterval(async () => {
         }
     });
 }, 500)
+
+
+/* Nästa som startar i slutet av första intervallen, avslutar interval 1 som kollar om motståndare är i spelet
+ och kollar istället om någon gjort ett move, om både gjort move visas det upp och intervall avslutas  */
 
 export async function waitingForMove() {
      clearInterval(startInterval);
@@ -40,6 +47,8 @@ export async function waitingForMove() {
     }, 1000)
 }
 
+
+/* funktion som används för att uppdatera spelares moves och sätter dom */
 const refreshFn = async () => {
     const response = await getGameInfo();
     console.log('refreshed data', response);
@@ -65,7 +74,7 @@ const refreshFn = async () => {
 
 
 
-
+/* skapar hamburgare av navbaren när skärmen blir liten nog */
 toggleButton.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
@@ -75,15 +84,15 @@ const scissor = document.getElementById('scissor');
 const paper = document.getElementById('paper');
 
 
+
+/* funktion som tar in båda spelarna och deras move och sedan jämför dem samt skriver ut resultat
+ och skapar en knapp för att stänga spelet  */
 export function checkPvpResult(playerOne, playerTwo, playerMove, opponentMove) {
 
     const result = document.getElementById('player-score');
 
-
-
     if (playerMove === opponentMove) {
         result.innerHTML = 'Draw!';
-
 
     }
     if (playerMove === 'ROCK') {
@@ -122,9 +131,6 @@ export function checkPvpResult(playerOne, playerTwo, playerMove, opponentMove) {
          window.location = 'homepage.html';
      })
 
-    // rock.classList.toggle('disable');
-    // scissor.classList.toggle('disable');
-    // paper.classList.toggle('disable');
 }
 
 
